@@ -14,7 +14,7 @@ for (let page = 1; ; page++) {
   repos.push(...batch);
   if (batch.length < 100) break;
 }
-const selected = repos.filter(r => !r.private && !r.archived && /^hermes-/i.test(r.name) && !config.exclude.includes(r.name) && (!r.fork || config.includeForks.includes(r.name)));
+const selected = repos.filter(r => !r.private && !r.archived && /^hermes-/i.test(r.name) && !config.exclude.includes(r.name) && !r.fork);
 const escape = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const names = { 'hermes-rss':'RSS', 'hermes-ssh':'SSH', 'hermes-plugin-openalex':'OpenAlex', 'hermes-plugin-shodan':'Shodan', 'hermes-clinepass':'ClinePass', 'hermes-resetwatch':'Resetwatch', 'hermes-ledgerline':'Ledgerline', 'hermes-tailscale':'Tailscale', 'hermes-plugin-backsearch':'BackSearch' };
 const entries = [];
