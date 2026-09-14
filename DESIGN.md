@@ -4,7 +4,7 @@ The catalog helps Hermes users compare Adolanium's public plugins and reach thei
 
 ## Visual direction
 
-A charcoal green background (`#111714`) and soft off-white text (`#e4eae3`) carry the dark page. Secondary text (`#a6b4a9`) remains legible. Pale green accents (`#a6d6ad`) identify links and focus; selected controls use a light green fill with dark text. Input and command surfaces are slightly lighter than the canvas. Native controls use the dark color scheme. Thin rules separate directory entries. Images appear only where plugin screenshots are available.
+A charcoal green background (`#111714`) and soft off-white text (`#e4eae3`) carry the dark page. Secondary text (`#a6b4a9`) remains legible. Pale green accents (`#a6d6ad`) identify links and focus; selected controls use a light green fill with dark text. Input and command surfaces are slightly lighter than the canvas. Native controls use the dark color scheme. Thin rules separate directory entries. Images appear where public screenshots or demos are available. Previews use optimized static stills, with a caption linking to the original screenshot or demo. Demo frames show useful results rather than empty opening screens.
 
 Georgia headings give names and the introduction a distinct hierarchy. Arial handles descriptions, metadata and controls; Consolas handles installation commands. System fonts keep the static page independent of font services.
 
