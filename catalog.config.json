@@ -5,6 +5,8 @@
     "hermes-agent-fuzzer",
     "hermes-plugins",
     "hermes-themes",
-    "hermes-pets"
+    "hermes-pets",
+    "hermes-plugin-openalex",
+    "hermes-plugin-resume-session"
   ]
 }
