@@ -1,0 +1,17 @@
+# Hermes plugins
+
+A public catalog of Adolanium's Hermes plugins.
+
+[Browse the catalog](https://adolanium.github.io/hermes-plugins/)
+
+The generated `index.html` contains all styling, search and filtering. It works as a standalone file, including without JavaScript. Preview images reference public GitHub assets.
+
+## Refresh
+
+Run `node scripts/build.mjs` with Node.js 22 or newer. An optional `GITHUB_TOKEN` environment variable increases the GitHub API rate limit. No dependencies are required.
+
+The generator reads only the public user-repositories endpoint, excludes archived repositories and entries listed in `catalog.config.json`, and discovers repositories whose names begin with `hermes-` except excluded non-plugin repositories. Themes and pets are explicitly excluded. Forks require explicit inclusion in the configuration.
+
+Installation commands are copied from READMEs only when they use `hermes plugins install` and reference the same repository. Other entries link to their full installation instructions. Images are taken from the repository README and checked for availability. Nothing here implies admission to the upstream plugin catalog.
+
+Edit `template.html` for layout or behavior. GitHub Actions rebuilds and deploys on pushes, manual runs and daily at 05:23 UTC. The deployed page refreshes directly; the checked-in `index.html` is a portable snapshot and changes only when rebuilt and committed. A failed refresh leaves the last successful deployment online. Scheduled workflows in public repositories may be disabled by GitHub after 60 days without repository activity; re-enable the workflow in Actions if needed.

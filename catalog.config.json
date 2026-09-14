@@ -1,0 +1,5 @@
+{
+  "owner": "Adolanium",
+  "exclude": ["hermes-agent", "hermes-agent-fuzzer", "hermes-plugins", "hermes-themes", "hermes-pets"],
+  "includeForks": ["Hermes-Bot-Mode", "hermes-plugin-backsearch"]
+}

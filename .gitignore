@@ -1,0 +1,4 @@
+.impeccable/
+node_modules/
+test-results/
+dist/
