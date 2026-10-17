@@ -28,7 +28,8 @@
     "flymes": "Flymes",
     "glyphwake": "Glyphwake",
     "resume-session": "Resume Session",
-    "gadget": "Hermes Gadget"
+    "gadget": "Hermes Gadget",
+    "hermes-deepseek-web": "Hermes DeepSeek Web"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
@@ -37,6 +38,10 @@
     "hermes-jina": {
       "category": "Web",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/140343"
+    },
+    "hermes-deepseek-web": {
+      "category": "Web",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/140462"
     },
     "hermes-glyphwake": {
       "category": "Desktop",

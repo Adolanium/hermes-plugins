@@ -11,7 +11,7 @@
   Desktop panels, agent tools, web backends and model providers for [Hermes Agent](https://github.com/NousResearch/hermes-agent).
   Every one is listed in the official Hermes plugin catalog, pinned to a reviewed commit, one command away.
 
-  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->15<!-- /COUNT --> IN THE CATALOG &nbsp;·&nbsp; <!-- OUTSIDE_COUNT -->5<!-- /OUTSIDE_COUNT --> MORE OUTSIDE IT</sub>
+  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->15<!-- /COUNT --> IN THE CATALOG &nbsp;·&nbsp; <!-- OUTSIDE_COUNT -->6<!-- /OUTSIDE_COUNT --> MORE OUTSIDE IT</sub>
 
   <br /><br />
 
@@ -68,7 +68,7 @@ The plugins in [The collection](#the-collection) are in the [Hermes plugin catal
 
 ## Outside the catalog
 
-<!-- OUTSIDE_COUNT -->5<!-- /OUTSIDE_COUNT --> more public plugins that aren't in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit and haven't been reviewed by Hermes maintainers, so read each README before you install.
+<!-- OUTSIDE_COUNT -->6<!-- /OUTSIDE_COUNT --> more public plugins that aren't in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit and haven't been reviewed by Hermes maintainers, so read each README before you install.
 
 <!-- OUTSIDE:START -->
 <table>
@@ -81,8 +81,8 @@ The plugins in [The collection](#the-collection) are in the [Hermes plugin catal
 <td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-plugin-resume-session"><img src="assets/banners/resume-session.webp" alt="Resume Session banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-plugin-resume-session">Resume Session</a></strong> &nbsp;<sub>TOOLS · v0.3.1 · NOT IN CATALOG</sub><br />Pick up recent Claude Code, Codex and Cursor sessions inside Hermes, with a compact pick-up card and the foreign transcript kept as inert history.<br /><code>hermes plugins install Adolanium/hermes-plugin-resume-session --enable</code></td>
 </tr>
 <tr>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-deepseek-web"><img src="assets/banners/hermes-deepseek-web.webp" alt="Hermes DeepSeek Web banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-deepseek-web">Hermes DeepSeek Web</a></strong> &nbsp;<sub>WEB · v0.1.0 · CATALOG REVIEW PENDING</sub><br />DeepSeek Search &amp; Fetch web backend for Hermes Agent: search the web and read any page as Markdown<br /><code>hermes plugins install Adolanium/hermes-deepseek-web</code></td>
 <td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-jina"><img src="assets/banners/hermes-jina.webp" alt="Hermes Jina banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-jina">Hermes Jina</a></strong> &nbsp;<sub>WEB · v0.1.0 · CATALOG REVIEW PENDING</sub><br />Jina Reader web backend for Hermes Agent: read any page as Markdown, search the web<br /><code>hermes plugins install Adolanium/hermes-jina</code></td>
-<td width="50%"></td>
 </tr>
 </table>
 <!-- OUTSIDE:END -->
