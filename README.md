@@ -25,7 +25,7 @@
 
 These are community plugins for [Hermes Agent](https://github.com/NousResearch/hermes-agent), the open agent from Nous Research. Each one plugs into a public Hermes surface (a Desktop panel, an agent tool, a web or model provider) and none of them patch Hermes itself.
 
-All of them are in the [Hermes plugin catalog](https://hermes-agent.nousresearch.com/docs/plugins/by/Adolanium). That means a maintainer reviewed each one, and every install checks out the exact commit that was reviewed.
+The plugins in [The collection](#the-collection) are in the [Hermes plugin catalog](https://hermes-agent.nousresearch.com/docs/plugins/by/adolanium). That means a maintainer reviewed each one, and every install checks out the exact commit that was reviewed. The ones [outside the catalog](#outside-the-catalog) install straight from GitHub instead.
 
 ## The collection
 
