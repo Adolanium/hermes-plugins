@@ -46,11 +46,12 @@ function parseEntry(text) {
   return entry;
 }
 function closed(value) {
-  try { JSON.parse(value.trim()); return true; } catch { return false; }
+  return /^"(?:[^"\\]|\\.)*"/.test(value.trim());
 }
 function scalar(value) {
   value = value.trim();
-  if (value.startsWith('"')) return JSON.parse(value);
+  // A quoted scalar may be followed by a comment: parse just the quoted part.
+  if (value.startsWith('"')) return JSON.parse(value.match(/^"(?:[^"\\]|\\.)*"/)?.[0] ?? value);
   value = value.replace(/\s+#.*$/, '');
   if (value.startsWith("'")) return value.slice(1, -1).replaceAll("''", "'");
   if (value === '[]' || value === '""') return '';
