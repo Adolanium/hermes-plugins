@@ -40,8 +40,7 @@
       "pending": "https://github.com/NousResearch/hermes-agent/pull/140343"
     },
     "hermes-deepseek-web": {
-      "category": "Web",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/140462"
+      "category": "Web"
     },
     "hermes-glyphwake": {
       "category": "Desktop",
