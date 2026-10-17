@@ -102,6 +102,7 @@ details p{margin:8px 0 0;line-height:1.6}
 [hidden]{display:none!important}
 /* How it works */
 .how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin:80px 0 0;padding-top:40px;border-top:1px solid var(--line)}
+.how-title{grid-column:1/-1;margin:0;font:normal 34px/1.1 var(--serif);letter-spacing:-.02em}
 .how h3{font:normal 22px/1.2 var(--serif);margin:10px 0 8px}
 .how p{margin:0;color:var(--muted);font-size:14px}
 .how .step{font-size:11px;letter-spacing:.18em;color:var(--faint)}
@@ -387,7 +388,8 @@ hermes plugins enable cloudflare-web-search" aria-label="Copy install commands f
 </article></div>
   <div class="empty" id="empty" hidden>Nothing matches that. Try another word or category.<button type="button" id="reset">Clear search and filters</button></div>
 </section>
-<section class="how" aria-label="How installing works">
+<section class="how" aria-labelledby="how-title">
+  <h2 class="how-title" id="how-title">How installing works</h2>
   <div><span class="step">01</span><h3>Install</h3><p><code>hermes plugins install &lt;name&gt;</code> clones the plugin at the commit the catalog pins. Hermes Desktop has the same button on its catalog page.</p></div>
   <div><span class="step">02</span><h3>Enable</h3><p><code>hermes plugins enable &lt;name&gt;</code> turns it on. Desktop plugins appear in the sidebar; agent tools and backends are picked up by the agent.</p></div>
   <div><span class="step">03</span><h3>Update</h3><p>New versions reach you only after a reviewed pin bump in the catalog. Then <code>hermes plugins update &lt;name&gt;</code> brings them in.</p></div>
