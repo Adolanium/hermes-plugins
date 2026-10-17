@@ -29,8 +29,6 @@ a:hover{color:var(--accent)}
 .top nav a:hover{color:var(--ink)}
 /* Hero */
 .hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.3fr);gap:48px;align-items:center;padding:64px 0 56px}
-.kicker{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
-.kicker span{color:var(--ink)}
 h1{font:normal clamp(44px,5.6vw,76px)/1.02 var(--serif);letter-spacing:-.03em;margin:0;text-wrap:balance}
 h1 em{font-style:italic;color:var(--accent)}
 .lede{color:var(--muted);max-width:46ch;margin:26px 0 0;font-size:15px}
@@ -87,7 +85,6 @@ h1 em{font-style:italic;color:var(--accent)}
 .outside-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:12px 48px;align-items:end;margin:72px 0 26px;padding-top:40px;border-top:1px solid var(--line)}
 .outside-head h2{margin:0;font:normal clamp(30px,3.6vw,44px)/1.08 var(--serif);letter-spacing:-.02em}
 .outside-head p{margin:0;color:var(--muted);font-size:14px;max-width:62ch}
-.outside-head .kicker{grid-column:1/-1;margin:0}
 h2{font:normal 29px/1.15 var(--serif);letter-spacing:-.02em;margin:14px 0 8px}
 h2 a{text-decoration:none}
 h2 a:hover{text-decoration:underline}
@@ -153,7 +150,6 @@ footer a{color:var(--accent)}
 <main>
 <section class="hero" aria-labelledby="title">
   <div>
-    <p class="kicker"><span>15</span> in the official catalog &nbsp;·&nbsp; <span>4</span> more outside it</p>
     <h1 id="title">Make Hermes <em>your own.</em></h1>
     <p class="lede">Desktop panels, agent tools, web backends and model providers for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. Every one is reviewed and pinned to an exact commit in the Hermes plugin catalog, so one command installs it.</p>
     <div class="hero-actions"><a class="button solid" href="#plugins">Browse plugins</a><a class="button" href="https://hermes-agent.nousresearch.com/docs/user-guide/features/plugin-catalog">How the catalog works</a></div>
@@ -164,7 +160,7 @@ footer a{color:var(--accent)}
   </div>
 </section>
 <section class="facts" aria-label="At a glance">
-  <div><b>15</b><span>plugins listed in the Hermes catalog</span></div>
+  <div><b>15</b><span>plugins in the Hermes catalog, plus 4 outside it</span></div>
   <div><b>1 command</b><span><code>hermes plugins install &lt;name&gt;</code></span></div>
   <div><b>Pinned</b><span>each install checks out a reviewed commit</span></div>
 </section>
@@ -412,7 +408,7 @@ hermes plugins enable cloudflare-web-search" aria-label="Copy install commands f
   </div>
 </article></div>
   <div id="outside">
-    <div class="outside-head"><p class="kicker">Outside the catalog</p><h2>Not in the official catalog</h2><p>Public plugins that aren't listed in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit, and Hermes maintainers haven't reviewed them, so read each README before you install.</p></div>
+    <div class="outside-head"><h2>Not in the official catalog</h2><p>Public plugins that aren't listed in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit, and Hermes maintainers haven't reviewed them, so read each README before you install.</p></div>
     <div class="grid" id="entries-outside"><article class="entry entry-outside" id="glyphwake" data-category="Desktop" data-listing="outside" data-search="glyphwake glyphwake click the empty chat in hermes desktop and watch a wave of ascii characters decode into a wordmark. desktop not in catalog">
   <div class="bar"><span class="bar-name">glyphwake</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-glyphwake" tabindex="-1" aria-hidden="true"><img src="assets/banners/glyphwake.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
