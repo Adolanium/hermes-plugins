@@ -1,56 +1,38 @@
 {
   "hermes-ledgerline": {
-    "image": "assets/previews/hermes-ledgerline.webp",
     "source": "https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa",
     "kind": "screenshot"
   },
   "hermes-nous-prices": {
-    "image": "assets/previews/hermes-nous-prices.webp",
     "source": "https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece",
     "kind": "screenshot"
   },
   "hermes-resetwatch": {
-    "image": "assets/previews/hermes-resetwatch.webp",
     "source": "https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64",
     "kind": "screenshot"
   },
   "hermes-rss": {
-    "image": "assets/previews/hermes-rss.webp",
     "source": "https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53",
     "kind": "screenshot"
   },
   "hermes-tailscale": {
-    "image": "assets/previews/hermes-tailscale.webp",
     "source": "https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073",
     "kind": "screenshot"
   },
   "hermes-terminal": {
-    "image": "assets/previews/hermes-terminal.webp",
     "source": "https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124",
     "kind": "screenshot"
   },
   "hermes-ssh": {
-    "image": "assets/previews/hermes-ssh.webp",
     "source": "https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728",
-    "kind": "demo",
-    "frameSeconds": 22
+    "kind": "demo"
   },
   "hermes-plugin-openalex": {
-    "image": "assets/previews/hermes-plugin-openalex.webp",
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif",
-    "kind": "demo",
-    "frameSeconds": 4
-  },
-  "hermes-plugin-resume-session": {
-    "image": "assets/previews/hermes-plugin-resume-session.webp",
-    "source": "https://raw.githubusercontent.com/Adolanium/hermes-plugin-resume-session/main/docs/demo.gif",
-    "kind": "demo",
-    "frameSeconds": 13
+    "kind": "demo"
   },
   "hermes-plugin-shodan": {
-    "image": "assets/previews/hermes-plugin-shodan.webp",
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif",
-    "kind": "demo",
-    "frameSeconds": 3
+    "kind": "demo"
   }
 }

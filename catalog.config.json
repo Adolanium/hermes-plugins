@@ -1,12 +1,28 @@
 {
   "owner": "Adolanium",
-  "exclude": [
-    "hermes-agent",
-    "hermes-agent-fuzzer",
-    "hermes-plugins",
-    "hermes-themes",
-    "hermes-pets",
-    "hermes-plugin-openalex",
-    "hermes-plugin-resume-session"
-  ]
+  "catalog": {
+    "repo": "NousResearch/hermes-agent",
+    "branch": "main",
+    "path": "plugin-catalog"
+  },
+  "titles": {
+    "clinepass": "ClinePass",
+    "devin": "Hermes × Devin",
+    "hermes-ledgerline": "Ledgerline",
+    "hermes-nous-prices": "Nous Prices",
+    "hermes-office": "Office",
+    "hermes-resetwatch": "Resetwatch",
+    "hermes-rss": "RSS",
+    "hermes-session-diff": "Session Diff",
+    "hermes-ssh": "SSH",
+    "hermes-tailscale": "Tailscale",
+    "hermes-terminal": "Terminal",
+    "hermes-toolsmith": "Toolsmith",
+    "hermes-jina": "Jina Reader",
+    "openalex": "OpenAlex",
+    "shodan": "Shodan"
+  },
+  "summaries": {
+    "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
+  }
 }
