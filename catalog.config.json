@@ -7,8 +7,7 @@
   },
   "exclude": [
     "hermes-plugins",
-    "hermes-agent-fuzzer",
-    "hermes-gadget-sdk"
+    "hermes-agent-fuzzer"
   ],
   "titles": {
     "clinepass": "ClinePass",
@@ -28,7 +27,8 @@
     "shodan": "Shodan",
     "flymes": "Flymes",
     "glyphwake": "Glyphwake",
-    "resume-session": "Resume Session"
+    "resume-session": "Resume Session",
+    "gadget": "Hermes Gadget"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
@@ -51,6 +51,12 @@
       "install": "",
       "setup": "https://github.com/Adolanium/Flymes#install",
       "summary": "An experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent's next tool call, with a live Desktop panel to watch it decide."
+    },
+    "hermes-gadget-sdk": {
+      "category": "Platforms",
+      "manifest": "plugin/plugin.yaml",
+      "install": "hermes plugins install https://github.com/Adolanium/hermes-gadget-sdk/tree/main/plugin --enable\nhermes gateway setup",
+      "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator."
     }
   }
 }

@@ -121,10 +121,10 @@ const tick = '`';
 for (const repo of repos) {
   if (repo.private || repo.fork || repo.archived || config.exclude.includes(repo.name) || listed.has(repo.name.toLowerCase())) continue;
   const base = `https://raw.githubusercontent.com/${config.owner}/${repo.name}/${repo.default_branch}`;
-  let manifest;
-  try { manifest = parseEntry(await get(`${base}/plugin.yaml`, false)); } catch { continue; }
-  if (!manifest.name) continue;
   const extra = config.outside?.[repo.name] || {};
+  let manifest;
+  try { manifest = parseEntry(await get(`${base}/${extra.manifest || 'plugin.yaml'}`, false)); } catch { continue; }
+  if (!manifest.name) continue;
   const readme = await get(`${base}/README.md`, false).catch(() => '');
   const pattern = new RegExp(String.raw`^\s*(hermes plugins install ${config.owner}/${repo.name}\b[^\r\n${tick}]*)$`, 'im');
   const found = readme.match(pattern)?.[1].trim();
@@ -143,6 +143,7 @@ for (const repo of repos) {
     repoName: repo.name,
     docs: '',
     setup: extra.setup || `${repo.html_url}#readme`,
+    website: repo.homepage || '',
     env: (manifest.requires_env || []).filter(v => typeof v === 'string'),
     install,
     image: await banner(manifest.name, ''),
@@ -171,7 +172,7 @@ const card = (e, i) => `<article class="entry${e.listing === 'catalog' ? '' : ' 
     ${e.install ? `<div class="command"><code>${escape(e.install).replace(/\S+/g, word => `<span class="nb">${word.replaceAll('/', '/<wbr>')}</span>`)}</code><button type="button" class="copy" data-command="${escape(e.install)}" aria-label="Copy install commands for ${escape(e.title)}">Copy</button></div>` : `<p class="setup">Needs a few setup steps first. <a href="${escape(e.setup)}">Read the setup guide</a>.</p>`}
     ${e.listing === 'catalog' ? '' : `<p class="unreviewed">${e.install ? 'Installs from GitHub at the latest commit. ' : ''}Not reviewed by Hermes maintainers.</p>`}
     ${e.disclosure ? `<details><summary>What it touches</summary><p>${escape(e.disclosure)}</p></details>` : ''}
-    <p class="entry-links">${e.docs ? `<a href="${escape(e.docs)}">Catalog page</a>` : ''}${e.pending ? `<a href="${escape(e.pending)}">Catalog PR</a>` : ''}<a href="${escape(e.repo)}#readme">Source</a>${e.media.length ? `<a class="view" href="${escape(e.media[0].src)}" data-media="${escape(JSON.stringify(e.media))}" data-title="${escape(e.title)}">${e.media.some(m => m.demo) ? 'Demo' : e.media.length > 1 ? `Screenshots (${e.media.length})` : 'Screenshot'}</a>` : ''}</p>
+    <p class="entry-links">${e.docs ? `<a href="${escape(e.docs)}">Catalog page</a>` : ''}${e.pending ? `<a href="${escape(e.pending)}">Catalog PR</a>` : ''}${e.website ? `<a href="${escape(e.website)}">Website</a>` : ''}<a href="${escape(e.repo)}#readme">Source</a>${e.media.length ? `<a class="view" href="${escape(e.media[0].src)}" data-media="${escape(JSON.stringify(e.media))}" data-title="${escape(e.title)}">${e.media.some(m => m.demo) ? 'Demo' : e.media.length > 1 ? `Screenshots (${e.media.length})` : 'Screenshot'}</a>` : ''}</p>
   </div>
 </article>`;
 
