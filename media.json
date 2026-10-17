@@ -25,7 +25,8 @@
   },
   "hermes-ssh": {
     "source": "https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728",
-    "kind": "demo"
+    "kind": "demo",
+    "type": "video"
   },
   "hermes-plugin-openalex": {
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif",

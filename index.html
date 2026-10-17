@@ -95,6 +95,7 @@ details p{margin:8px 0 0;line-height:1.6}
 .entry-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:auto 0 0;padding-top:16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .entry-links a{color:var(--accent);text-decoration:none}
 .entry-links a::after{content:' \2197'}
+.entry-links a.view::after{content:' \2922'}
 .entry-links a:hover{color:var(--ink);text-decoration:underline}
 .empty{padding:48px 0;color:var(--muted)}
 .empty button{display:block;margin-top:16px;font:13px var(--mono);color:var(--bg);background:var(--accent);border:0;padding:10px 16px;cursor:pointer;min-height:44px}
@@ -107,6 +108,27 @@ details p{margin:8px 0 0;line-height:1.6}
 footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:64px;padding:24px 0 40px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 footer p{margin:0;max-width:70ch}
 footer a{color:var(--accent)}
+/* Media viewer */
+.viewer{padding:0;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);width:min(1180px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);box-shadow:14px 14px 0 rgba(201,200,255,.1);overflow:hidden}
+.viewer[open]{display:flex;flex-direction:column}
+.viewer::backdrop{background:rgba(4,0,58,.86) radial-gradient(rgba(201,200,255,.16) 1px,transparent 1.2px) 0 0/6px 6px;backdrop-filter:blur(3px)}
+.viewer .bar{padding:8px 8px 8px 14px;font-size:12px}
+.viewer-close{display:grid;place-items:center;width:32px;height:32px;padding:0;font:16px/1 var(--mono);color:var(--ink);background:transparent;border:1px solid var(--line-2);cursor:pointer}
+.viewer-close:hover{background:var(--accent);color:var(--bg)}
+.viewer-stage{position:relative;flex:1 1 auto;min-height:120px;display:flex;align-items:center;justify-content:center;padding:18px;background:var(--bg-2) repeating-linear-gradient(0deg,rgba(201,200,255,.035) 0 1px,transparent 1px 4px)}
+.viewer-stage img,.viewer-stage video{display:block;flex:0 1 auto;min-width:0;max-width:100%;max-height:calc(100dvh - 190px);width:auto;height:auto;border:1px solid var(--line);background:var(--bg)}
+.viewer-loading{position:absolute;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.viewer-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;font:18px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line-2);cursor:pointer}
+.viewer-nav:hover{background:var(--accent);color:var(--bg)}
+.viewer-prev{left:10px}.viewer-next{right:10px}
+.viewer-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px;padding:10px 14px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted)}
+.viewer-foot a{color:var(--accent);text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+.viewer-foot a::after{content:' \2197'}
+.viewer-foot a:hover{color:var(--ink);text-decoration:underline}
+@media (prefers-reduced-motion:no-preference){.viewer[open]{animation:viewer-in .18s ease-out}.viewer[open]::backdrop{animation:fade-in .18s ease-out}}
+@keyframes viewer-in{from{opacity:0;transform:translate(6px,6px) scale(.985)}}
+@keyframes fade-in{from{opacity:0}}
+@media (max-width:640px){.viewer{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.viewer-stage{padding:10px}.viewer-stage img,.viewer-stage video{max-height:calc(100dvh - 170px)}.viewer-nav{top:auto;bottom:16px;transform:none}}
 .status{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 18px;font-size:13px;max-width:90vw;z-index:9}
 @media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:40px 0}.how{grid-template-columns:1fr}}
 @media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}#entries{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
@@ -150,7 +172,7 @@ footer a{color:var(--accent)}
 hermes plugins enable <span class="nb">hermes-ledgerline</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ledgerline
 hermes plugins enable hermes-ledgerline" aria-label="Copy install commands for Ledgerline">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ledgerline">Catalog page</a><a href="https://github.com/Adolanium/hermes-ledgerline#readme">Source</a><a href="https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ledgerline">Catalog page</a><a href="https://github.com/Adolanium/hermes-ledgerline#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Ledgerline">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-nous-prices" data-category="Desktop" data-search="nous prices hermes-nous-prices browse nous portal model prices and account balances in hermes desktop. desktop">
@@ -165,7 +187,7 @@ hermes plugins enable hermes-ledgerline" aria-label="Copy install commands for L
 hermes plugins enable <span class="nb">hermes-nous-prices</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-nous-prices
 hermes plugins enable hermes-nous-prices" aria-label="Copy install commands for Nous Prices">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-nous-prices">Catalog page</a><a href="https://github.com/Adolanium/hermes-nous-prices#readme">Source</a><a href="https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-nous-prices">Catalog page</a><a href="https://github.com/Adolanium/hermes-nous-prices#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Nous Prices">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-office" data-category="Desktop" data-search="office hermes-office view and manage bot mode agents in a shared office in hermes desktop. desktop">
@@ -195,7 +217,7 @@ hermes plugins enable hermes-office" aria-label="Copy install commands for Offic
 hermes plugins enable <span class="nb">hermes-resetwatch</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-resetwatch
 hermes plugins enable hermes-resetwatch" aria-label="Copy install commands for Resetwatch">Copy</button></div>
     <details><summary>What it touches</summary><p>probe.py re-executes itself under the Hermes Python interpreter located via HERMES_PYTHON / VIRTUAL_ENV / the parent process or the Hermes installer&#39;s managed venv (HERMES_HOME/installs); it reads provider API keys from the Hermes .env, Hermes&#39;s own saved OAuth logins (auth.json credential pool, read-only), the Vaultwarden plugin&#39;s local secret cache (cache/vaultwarden_cache.json, read-only, only when Vaultwarden is the sole enabled secret source) and Docker s6 container env files, plus other coding-assistant CLIs&#39; local logins (including macOS keychain entries), and sends each key only to its own vendor&#39;s usage endpoint.</p></details>
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-resetwatch">Catalog page</a><a href="https://github.com/Adolanium/hermes-resetwatch#readme">Source</a><a href="https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-resetwatch">Catalog page</a><a href="https://github.com/Adolanium/hermes-resetwatch#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Resetwatch">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-rss" data-category="Desktop" data-search="rss hermes-rss read rss and atom feeds and discuss articles in hermes desktop. desktop">
@@ -210,7 +232,7 @@ hermes plugins enable hermes-resetwatch" aria-label="Copy install commands for R
 hermes plugins enable <span class="nb">hermes-rss</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-rss
 hermes plugins enable hermes-rss" aria-label="Copy install commands for RSS">Copy</button></div>
     <details><summary>What it touches</summary><p>feeds and full articles are fetched with curl through the gateway&#39;s shell.exec on the connected Hermes host (public-IPv4 SSRF guard); opt-in AI grading sends article excerpts to your configured model and creates HERMES_HOME/skills/rss-importance-grading/SKILL.md if missing; opt-in image loading fetches publisher images directly from Desktop.</p></details>
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-rss">Catalog page</a><a href="https://github.com/Adolanium/hermes-rss#readme">Source</a><a href="https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-rss">Catalog page</a><a href="https://github.com/Adolanium/hermes-rss#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="RSS">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-session-diff" data-category="Desktop" data-search="session diff hermes-session-diff persistent session file diffs, run comparisons, and individual edit history in hermes desktop. desktop">
@@ -240,7 +262,7 @@ hermes plugins enable hermes-session-diff" aria-label="Copy install commands for
 hermes plugins enable <span class="nb">hermes-ssh</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ssh
 hermes plugins enable hermes-ssh" aria-label="Copy install commands for SSH">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ssh">Catalog page</a><a href="https://github.com/Adolanium/hermes-ssh#readme">Source</a><a href="https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728">Demo</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ssh">Catalog page</a><a href="https://github.com/Adolanium/hermes-ssh#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728&quot;,&quot;video&quot;:true,&quot;demo&quot;:true}]" data-title="SSH">Demo</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-tailscale" data-category="Desktop" data-search="tailscale hermes-tailscale browse tailscale devices and connect to remote hermes instances in hermes desktop. desktop">
@@ -255,7 +277,7 @@ hermes plugins enable hermes-ssh" aria-label="Copy install commands for SSH">Cop
 hermes plugins enable <span class="nb">hermes-tailscale</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-tailscale
 hermes plugins enable hermes-tailscale" aria-label="Copy install commands for Tailscale">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-tailscale">Catalog page</a><a href="https://github.com/Adolanium/hermes-tailscale#readme">Source</a><a href="https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-tailscale">Catalog page</a><a href="https://github.com/Adolanium/hermes-tailscale#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Tailscale">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-terminal" data-category="Desktop" data-search="terminal hermes-terminal run the hermes terminal interface in a hermes desktop workspace tab. desktop">
@@ -270,7 +292,7 @@ hermes plugins enable hermes-tailscale" aria-label="Copy install commands for Ta
 hermes plugins enable <span class="nb">hermes-terminal</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-terminal
 hermes plugins enable hermes-terminal" aria-label="Copy install commands for Terminal">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-terminal">Catalog page</a><a href="https://github.com/Adolanium/hermes-terminal#readme">Source</a><a href="https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124">Screenshot</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-terminal">Catalog page</a><a href="https://github.com/Adolanium/hermes-terminal#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Terminal">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="hermes-toolsmith" data-category="Desktop" data-search="toolsmith hermes-toolsmith local developer tools, transformation recipes, and reviewed chat handoff inside hermes desktop. desktop">
@@ -315,7 +337,7 @@ hermes plugins enable clinepass" aria-label="Copy install commands for ClinePass
 hermes plugins enable <span class="nb">devin</span></code><button type="button" class="copy" data-command="hermes plugins install devin
 hermes plugins enable devin" aria-label="Copy install commands for Hermes Devin">Copy</button></div>
     <details><summary>What it touches</summary><p>spawns the vendor devin CLI from PATH or cli_path (devin acp, devin acp --cloud, devin --print, devin auth status, devin models list); the CLI edits files and runs shell commands in a folder the model picks (any folder unless allowed_roots is set) under the configured permission mode (accept-edits/smart auto-allow edits, dangerous auto-allows everything and needs allow_dangerous: true), and talks to Cognition&#39;s servers; Devin Cloud runs use Cognition-managed permissions that Hermes does not gate. Every model-initiated launch goes through Hermes approval; follow-ups typed on a Desktop run card and answers to Devin&#39;s prompts on the card start or allow actions on that click without a Hermes prompt (unanswered card prompts are denied after 300 s by default). Uses the existing Devin CLI login and stores no credentials; Hermes provider, bot and tool secrets are stripped from the child environment (extra_env is passed as set). Background runs continue after the turn up to their timeout and post Devin&#39;s output back into the conversation as a message when they finish. Run history (prompts, diffs, command output) and model preferences are saved under plugin-data/devin unless persist_runs is off. Independent community add-on, not affiliated with Cognition.</p></details>
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/devin">Catalog page</a><a href="https://github.com/Adolanium/hermes-devin#readme">Source</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/devin">Catalog page</a><a href="https://github.com/Adolanium/hermes-devin#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Hermes Devin">Screenshot</a></p>
   </div>
 </article>
 <article class="entry" id="openalex" data-category="Tools" data-search="openalex openalex scholarly search, citation traversal, grouped counts, and fulltext access through openalex with session spending limits. tools">
@@ -330,7 +352,7 @@ hermes plugins enable devin" aria-label="Copy install commands for Hermes Devin"
 hermes plugins enable <span class="nb">openalex</span></code><button type="button" class="copy" data-command="hermes plugins install openalex
 hermes plugins enable openalex" aria-label="Copy install commands for OpenAlex">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/openalex">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-openalex#readme">Source</a><a href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif">Demo</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/openalex">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-openalex#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif&quot;,&quot;video&quot;:false,&quot;demo&quot;:true}]" data-title="OpenAlex">Demo</a></p>
   </div>
 </article>
 <article class="entry" id="shodan" data-category="Tools" data-search="shodan shodan search internet-connected hosts, open ports, dns and cves through shodan, with a credit ledger that stops before your monthly query credits run out. tools">
@@ -345,7 +367,7 @@ hermes plugins enable openalex" aria-label="Copy install commands for OpenAlex">
 hermes plugins enable <span class="nb">shodan</span></code><button type="button" class="copy" data-command="hermes plugins install shodan
 hermes plugins enable shodan" aria-label="Copy install commands for Shodan">Copy</button></div>
 
-    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/shodan">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-shodan#readme">Source</a><a href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif">Demo</a></p>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/shodan">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-shodan#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif&quot;,&quot;video&quot;:false,&quot;demo&quot;:true}]" data-title="Shodan">Demo</a></p>
   </div>
 </article>
 <article class="entry" id="cloudflare-web-search" data-category="Web" data-search="cloudflare web search cloudflare-web-search cloudflare web search backend for hermes&#39; existing web_search tool, with ceramic, exa, or linkup selected in plugin settings. search only; keep a separate extract backend. web">
@@ -374,6 +396,11 @@ hermes plugins enable cloudflare-web-search" aria-label="Copy install commands f
 <footer><p>Independent community plugins for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> by Nous Research; not official Nous Research products. Listed from the Hermes plugin catalog, refreshed daily. Last refreshed 2026-10-17.</p><a href="https://github.com/Adolanium/hermes-plugins/issues">Report a problem</a></footer>
 </div>
 <div id="status" class="status" role="status" hidden></div>
+<dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+  <div class="bar"><span class="bar-name" id="viewer-title">preview</span><button type="button" class="viewer-close" id="viewer-close" aria-label="Close preview">&#215;</button></div>
+  <div class="viewer-stage" id="viewer-stage"><span class="viewer-loading" id="viewer-loading">Loading</span><button type="button" class="viewer-nav viewer-prev" id="viewer-prev" aria-label="Previous image" hidden>&#8592;</button><button type="button" class="viewer-nav viewer-next" id="viewer-next" aria-label="Next image" hidden>&#8594;</button></div>
+  <div class="viewer-foot"><span id="viewer-count"></span><a id="viewer-original" href="#" target="_blank" rel="noopener">Open original</a></div>
+</dialog>
 <script>
 document.querySelector('#tools').hidden=false;
 const search=document.querySelector('#search'),entries=[...document.querySelectorAll('.entry')],filters=[...document.querySelectorAll('[data-filter]')],results=document.querySelector('#results');
@@ -381,6 +408,35 @@ let active='All';
 function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
 search.addEventListener('input',update);filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;update()}));
 document.querySelector('#reset').addEventListener('click',()=>{search.value='';active='All';update();search.focus()});
+// Screenshot and demo links open in a window-styled viewer instead of leaving the page.
+const viewer=document.querySelector('#viewer');
+if(viewer&&viewer.showModal){
+  const stage=document.querySelector('#viewer-stage'),loading=document.querySelector('#viewer-loading'),prev=document.querySelector('#viewer-prev'),next=document.querySelector('#viewer-next'),title=document.querySelector('#viewer-title'),count=document.querySelector('#viewer-count'),original=document.querySelector('#viewer-original');
+  let items=[],index=0,name='';
+  function show(i){
+    index=(i+items.length)%items.length;const item=items[index];
+    stage.querySelector('img,video')?.remove();loading.hidden=false;
+    const media=document.createElement(item.video?'video':'img');
+    if(item.video){media.controls=true;media.autoplay=true;media.muted=true;media.loop=true;media.playsInline=true;media.addEventListener('loadeddata',()=>loading.hidden=true)}
+    else{media.alt=`${name} ${item.demo?'demo':'screenshot'}`;media.decoding='async';media.addEventListener('load',()=>loading.hidden=true)}
+    media.addEventListener('error',()=>{loading.textContent='Could not load. Use Open original.'});
+    media.src=item.src;stage.insertBefore(media,prev);
+    const kind=item.demo?'demo':'screenshot';
+    title.textContent=`${name.toLowerCase()} — ${kind}${items.length>1?` ${index+1}/${items.length}`:''}`;
+    count.textContent=items.length>1?`${index+1} of ${items.length} · use the arrow keys`:item.video?'Video demo':item.demo?'Animated demo':'Screenshot';
+    original.href=item.src;prev.hidden=next.hidden=items.length<2;
+  }
+  document.querySelectorAll('a.view').forEach(link=>link.addEventListener('click',event=>{
+    if(event.metaKey||event.ctrlKey||event.shiftKey||event.button!==0)return;
+    try{items=JSON.parse(link.dataset.media)}catch{return}
+    if(!items.length)return;event.preventDefault();name=link.dataset.title;loading.textContent='Loading';viewer.showModal();show(0);
+  }));
+  prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));
+  document.querySelector('#viewer-close').addEventListener('click',()=>viewer.close());
+  viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close()});
+  viewer.addEventListener('keydown',event=>{if(items.length>1&&event.key==='ArrowLeft')show(index-1);if(items.length>1&&event.key==='ArrowRight')show(index+1)});
+  viewer.addEventListener('close',()=>{if(!viewer.open)stage.querySelector('img,video')?.remove()});
+}
 let timer;document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const n=document.querySelector('#status');try{await navigator.clipboard.writeText(b.dataset.command);n.textContent='Install commands copied.'}catch{n.textContent='Could not copy. Select the commands and copy them manually.'}n.hidden=false;clearTimeout(timer);timer=setTimeout(()=>n.hidden=true,4000)}));
 </script>
 </body>

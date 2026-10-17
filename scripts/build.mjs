@@ -21,7 +21,7 @@ async function get(url, json = true) {
 }
 
 // Catalog entries are flat YAML. Read the top-level scalars and the one list we
-// show (capabilities.requires_env); folded blocks such as known_issues are skipped.
+// show (screenshots, capabilities.requires_env); folded blocks such as known_issues are skipped.
 function parseEntry(text) {
   const entry = {};
   const lines = text.split(/\r?\n/);
@@ -32,6 +32,10 @@ function parseEntry(text) {
       let value = top[2];
       while (value.startsWith('"') && !closed(value) && i + 1 < lines.length) value += ' ' + lines[++i].trim();
       entry[top[1]] = scalar(value);
+    }
+    if (/^screenshots:\s*$/.test(lines[i])) {
+      entry.screenshots = [];
+      while (lines[i + 1]?.match(/^\s*-\s+/)) entry.screenshots.push(scalar(lines[++i].replace(/^\s*-\s+/, '')));
     }
     const env = lines[i].match(/^\s+requires_env:\s*(.*)$/);
     if (env) {
@@ -65,6 +69,15 @@ const ownedEntry = new RegExp(String.raw`^repo:\s*["']?https://github\.com/${con
 const exists = path => access(new URL(path, root)).then(() => true, () => false);
 const categories = { desktop: 'Desktop', tools: 'Tools', web: 'Web', models: 'Models', memory: 'Memory', platform: 'Platforms', voice: 'Voice', automation: 'Automation', general: 'General' };
 
+// One list of things to show per card: the curated media.json item first, then
+// the catalog's own screenshots. Video is told apart by type or extension.
+function mediaFor(curated, screenshots) {
+  const items = [];
+  if (curated) items.push({ src: curated.source, video: curated.type === 'video', demo: curated.kind === 'demo' });
+  for (const src of screenshots) if (!items.some(m => m.src === src)) items.push({ src, video: /\.(mp4|webm|mov)$/i.test(src), demo: false });
+  return items;
+}
+
 const entries = [];
 for (const { text } of raw) {
   if (!ownedEntry.test(text)) continue;
@@ -86,7 +99,7 @@ for (const { text } of raw) {
     docs: `https://hermes-agent.nousresearch.com/docs/plugins/${e.name}`,
     env: e.requires_env || [],
     image: (await exists(banner)) ? banner : (e.image || ''),
-    preview: media[repoName] || null,
+    media: mediaFor(media[repoName], e.screenshots || []),
   });
 }
 entries.sort((a, b) => a.category.localeCompare(b.category) || a.title.localeCompare(b.title));
@@ -108,7 +121,7 @@ const cards = entries.map((e, i) => `<article class="entry" id="${escape(e.name)
     ${e.env.length ? `<p class="env">Needs ${e.env.map(v => `<code>${escape(v)}</code>`).join(' ')}</p>` : ''}
     <div class="command"><code>${escape(command(e)).replaceAll(escape(e.name), `<span class="nb">${escape(e.name)}</span>`)}</code><button type="button" class="copy" data-command="${escape(command(e))}" aria-label="Copy install commands for ${escape(e.title)}">Copy</button></div>
     ${e.disclosure ? `<details><summary>What it touches</summary><p>${escape(e.disclosure)}</p></details>` : ''}
-    <p class="entry-links"><a href="${escape(e.docs)}">Catalog page</a><a href="${escape(e.repo)}#readme">Source</a>${e.preview ? `<a href="${escape(e.preview.source)}">${e.preview.kind === 'demo' ? 'Demo' : 'Screenshot'}</a>` : ''}</p>
+    <p class="entry-links"><a href="${escape(e.docs)}">Catalog page</a><a href="${escape(e.repo)}#readme">Source</a>${e.media.length ? `<a class="view" href="${escape(e.media[0].src)}" data-media="${escape(JSON.stringify(e.media))}" data-title="${escape(e.title)}">${e.media.some(m => m.demo) ? 'Demo' : e.media.length > 1 ? `Screenshots (${e.media.length})` : 'Screenshot'}</a>` : ''}</p>
   </div>
 </article>`).join('\n');
 

@@ -95,6 +95,7 @@ details p{margin:8px 0 0;line-height:1.6}
 .entry-links{display:flex;flex-wrap:wrap;gap:6px 18px;margin:auto 0 0;padding-top:16px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
 .entry-links a{color:var(--accent);text-decoration:none}
 .entry-links a::after{content:' \2197'}
+.entry-links a.view::after{content:' \2922'}
 .entry-links a:hover{color:var(--ink);text-decoration:underline}
 .empty{padding:48px 0;color:var(--muted)}
 .empty button{display:block;margin-top:16px;font:13px var(--mono);color:var(--bg);background:var(--accent);border:0;padding:10px 16px;cursor:pointer;min-height:44px}
@@ -107,6 +108,27 @@ details p{margin:8px 0 0;line-height:1.6}
 footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:64px;padding:24px 0 40px;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
 footer p{margin:0;max-width:70ch}
 footer a{color:var(--accent)}
+/* Media viewer */
+.viewer{padding:0;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);width:min(1180px,calc(100vw - 32px));max-width:none;max-height:calc(100dvh - 32px);box-shadow:14px 14px 0 rgba(201,200,255,.1);overflow:hidden}
+.viewer[open]{display:flex;flex-direction:column}
+.viewer::backdrop{background:rgba(4,0,58,.86) radial-gradient(rgba(201,200,255,.16) 1px,transparent 1.2px) 0 0/6px 6px;backdrop-filter:blur(3px)}
+.viewer .bar{padding:8px 8px 8px 14px;font-size:12px}
+.viewer-close{display:grid;place-items:center;width:32px;height:32px;padding:0;font:16px/1 var(--mono);color:var(--ink);background:transparent;border:1px solid var(--line-2);cursor:pointer}
+.viewer-close:hover{background:var(--accent);color:var(--bg)}
+.viewer-stage{position:relative;flex:1 1 auto;min-height:120px;display:flex;align-items:center;justify-content:center;padding:18px;background:var(--bg-2) repeating-linear-gradient(0deg,rgba(201,200,255,.035) 0 1px,transparent 1px 4px)}
+.viewer-stage img,.viewer-stage video{display:block;flex:0 1 auto;min-width:0;max-width:100%;max-height:calc(100dvh - 190px);width:auto;height:auto;border:1px solid var(--line);background:var(--bg)}
+.viewer-loading{position:absolute;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.viewer-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;font:18px var(--mono);color:var(--ink);background:var(--bg);border:1px solid var(--line-2);cursor:pointer}
+.viewer-nav:hover{background:var(--accent);color:var(--bg)}
+.viewer-prev{left:10px}.viewer-next{right:10px}
+.viewer-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 18px;padding:10px 14px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted)}
+.viewer-foot a{color:var(--accent);text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
+.viewer-foot a::after{content:' \2197'}
+.viewer-foot a:hover{color:var(--ink);text-decoration:underline}
+@media (prefers-reduced-motion:no-preference){.viewer[open]{animation:viewer-in .18s ease-out}.viewer[open]::backdrop{animation:fade-in .18s ease-out}}
+@keyframes viewer-in{from{opacity:0;transform:translate(6px,6px) scale(.985)}}
+@keyframes fade-in{from{opacity:0}}
+@media (max-width:640px){.viewer{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.viewer-stage{padding:10px}.viewer-stage img,.viewer-stage video{max-height:calc(100dvh - 170px)}.viewer-nav{top:auto;bottom:16px;transform:none}}
 .status{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 18px;font-size:13px;max-width:90vw;z-index:9}
 @media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:40px 0}.how{grid-template-columns:1fr}}
 @media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}#entries{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
@@ -150,6 +172,11 @@ footer a{color:var(--accent)}
 <footer><p>Independent community plugins for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> by Nous Research; not official Nous Research products. Listed from the Hermes plugin catalog, refreshed daily. Last refreshed {{UPDATED}}.</p><a href="https://github.com/Adolanium/hermes-plugins/issues">Report a problem</a></footer>
 </div>
 <div id="status" class="status" role="status" hidden></div>
+<dialog class="viewer" id="viewer" aria-labelledby="viewer-title">
+  <div class="bar"><span class="bar-name" id="viewer-title">preview</span><button type="button" class="viewer-close" id="viewer-close" aria-label="Close preview">&#215;</button></div>
+  <div class="viewer-stage" id="viewer-stage"><span class="viewer-loading" id="viewer-loading">Loading</span><button type="button" class="viewer-nav viewer-prev" id="viewer-prev" aria-label="Previous image" hidden>&#8592;</button><button type="button" class="viewer-nav viewer-next" id="viewer-next" aria-label="Next image" hidden>&#8594;</button></div>
+  <div class="viewer-foot"><span id="viewer-count"></span><a id="viewer-original" href="#" target="_blank" rel="noopener">Open original</a></div>
+</dialog>
 <script>
 document.querySelector('#tools').hidden=false;
 const search=document.querySelector('#search'),entries=[...document.querySelectorAll('.entry')],filters=[...document.querySelectorAll('[data-filter]')],results=document.querySelector('#results');
@@ -157,6 +184,35 @@ let active='All';
 function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
 search.addEventListener('input',update);filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;update()}));
 document.querySelector('#reset').addEventListener('click',()=>{search.value='';active='All';update();search.focus()});
+// Screenshot and demo links open in a window-styled viewer instead of leaving the page.
+const viewer=document.querySelector('#viewer');
+if(viewer&&viewer.showModal){
+  const stage=document.querySelector('#viewer-stage'),loading=document.querySelector('#viewer-loading'),prev=document.querySelector('#viewer-prev'),next=document.querySelector('#viewer-next'),title=document.querySelector('#viewer-title'),count=document.querySelector('#viewer-count'),original=document.querySelector('#viewer-original');
+  let items=[],index=0,name='';
+  function show(i){
+    index=(i+items.length)%items.length;const item=items[index];
+    stage.querySelector('img,video')?.remove();loading.hidden=false;
+    const media=document.createElement(item.video?'video':'img');
+    if(item.video){media.controls=true;media.autoplay=true;media.muted=true;media.loop=true;media.playsInline=true;media.addEventListener('loadeddata',()=>loading.hidden=true)}
+    else{media.alt=`${name} ${item.demo?'demo':'screenshot'}`;media.decoding='async';media.addEventListener('load',()=>loading.hidden=true)}
+    media.addEventListener('error',()=>{loading.textContent='Could not load. Use Open original.'});
+    media.src=item.src;stage.insertBefore(media,prev);
+    const kind=item.demo?'demo':'screenshot';
+    title.textContent=`${name.toLowerCase()} — ${kind}${items.length>1?` ${index+1}/${items.length}`:''}`;
+    count.textContent=items.length>1?`${index+1} of ${items.length} · use the arrow keys`:item.video?'Video demo':item.demo?'Animated demo':'Screenshot';
+    original.href=item.src;prev.hidden=next.hidden=items.length<2;
+  }
+  document.querySelectorAll('a.view').forEach(link=>link.addEventListener('click',event=>{
+    if(event.metaKey||event.ctrlKey||event.shiftKey||event.button!==0)return;
+    try{items=JSON.parse(link.dataset.media)}catch{return}
+    if(!items.length)return;event.preventDefault();name=link.dataset.title;loading.textContent='Loading';viewer.showModal();show(0);
+  }));
+  prev.addEventListener('click',()=>show(index-1));next.addEventListener('click',()=>show(index+1));
+  document.querySelector('#viewer-close').addEventListener('click',()=>viewer.close());
+  viewer.addEventListener('click',event=>{if(event.target===viewer)viewer.close()});
+  viewer.addEventListener('keydown',event=>{if(items.length>1&&event.key==='ArrowLeft')show(index-1);if(items.length>1&&event.key==='ArrowRight')show(index+1)});
+  viewer.addEventListener('close',()=>{if(!viewer.open)stage.querySelector('img,video')?.remove()});
+}
 let timer;document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{const n=document.querySelector('#status');try{await navigator.clipboard.writeText(b.dataset.command);n.textContent='Install commands copied.'}catch{n.textContent='Could not copy. Select the commands and copy them manually.'}n.hidden=false;clearTimeout(timer);timer=setTimeout(()=>n.hidden=true,4000)}));
 </script>
 </body>
