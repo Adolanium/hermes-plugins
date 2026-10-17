@@ -56,7 +56,8 @@
       "category": "Platforms",
       "manifest": "plugin/plugin.yaml",
       "install": "hermes plugins install https://github.com/Adolanium/hermes-gadget-sdk/tree/main/plugin --enable\nhermes gateway setup",
-      "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator."
+      "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator.",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/140433"
     }
   }
 }
