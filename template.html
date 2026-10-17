@@ -67,7 +67,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .filters span{opacity:.7;margin-left:6px}
 .results{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 22px}
 /* Cards */
-#entries{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
 .entry{display:flex;flex-direction:column;border:1px solid var(--line-2);background:var(--bg);scroll-margin-top:24px;transition:transform .18s ease-out,box-shadow .18s ease-out}
 .entry:hover,.entry:focus-within{transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(201,200,255,.14)}
 .art{display:block;border-bottom:1px solid var(--line)}
@@ -78,6 +78,16 @@ h1 em{font-style:italic;color:var(--accent)}
 .entry-meta span{border:1px solid var(--line);padding:2px 7px}
 .entry-meta span:first-child{color:var(--ink);border-color:var(--line-2)}
 .entry-meta .sha{text-transform:none}
+.entry-meta .listing{color:var(--bg);background:var(--muted);border-color:var(--muted)}
+.entry-outside{border-style:dashed}
+.entry-outside .bar{background:transparent}
+.setup{margin:16px 0 0;padding:10px 12px;border:1px dashed var(--line-2);font-size:13px;color:var(--muted)}
+.setup a{color:var(--accent)}
+.unreviewed{margin:10px 0 0;font-size:12px;color:var(--muted)}
+.outside-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:12px 48px;align-items:end;margin:72px 0 26px;padding-top:40px;border-top:1px solid var(--line)}
+.outside-head h2{margin:0;font:normal clamp(30px,3.6vw,44px)/1.08 var(--serif);letter-spacing:-.02em}
+.outside-head p{margin:0;color:var(--muted);font-size:14px;max-width:62ch}
+.outside-head .kicker{grid-column:1/-1;margin:0}
 h2{font:normal 29px/1.15 var(--serif);letter-spacing:-.02em;margin:14px 0 8px}
 h2 a{text-decoration:none}
 h2 a:hover{text-decoration:underline}
@@ -132,7 +142,7 @@ footer a{color:var(--accent)}
 @media (max-width:640px){.viewer{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.viewer-stage{padding:10px}.viewer-stage img,.viewer-stage video{max-height:calc(100dvh - 170px)}.viewer-nav{top:auto;bottom:16px;transform:none}}
 .status{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 18px;font-size:13px;max-width:90vw;z-index:9}
 @media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:40px 0}.how{grid-template-columns:1fr}}
-@media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}#entries{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
+@media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}.grid{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
 @media (prefers-reduced-motion:reduce){.entry{transition:none}.entry:hover,.entry:focus-within{transform:none}}
 </style>
 </head>
@@ -143,7 +153,7 @@ footer a{color:var(--accent)}
 <main>
 <section class="hero" aria-labelledby="title">
   <div>
-    <p class="kicker"><span>{{COUNT}}</span> plugins &nbsp;·&nbsp; in the official catalog</p>
+    <p class="kicker"><span>{{COUNT}}</span> in the official catalog &nbsp;·&nbsp; <span>{{OUTSIDE_COUNT}}</span> more outside it</p>
     <h1 id="title">Make Hermes <em>your own.</em></h1>
     <p class="lede">Desktop panels, agent tools, web backends and model providers for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. Every one is reviewed and pinned to an exact commit in the Hermes plugin catalog, so one command installs it.</p>
     <div class="hero-actions"><a class="button solid" href="#plugins">Browse plugins</a><a class="button" href="https://hermes-agent.nousresearch.com/docs/user-guide/features/plugin-catalog">How the catalog works</a></div>
@@ -159,9 +169,13 @@ footer a{color:var(--accent)}
   <div><b>Pinned</b><span>each install checks out a reviewed commit</span></div>
 </section>
 <section id="plugins" aria-label="Plugins">
-  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>{{COUNT}}</span></button>{{FILTERS}}</div></div>
-  <p class="results" id="results" role="status">{{COUNT}} plugins</p>
-  <div id="entries"><!-- ENTRIES --></div>
+  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>{{TOTAL}}</span></button>{{FILTERS}}</div></div>
+  <p class="results" id="results" role="status">{{TOTAL}} plugins</p>
+  <div class="grid" id="entries"><!-- ENTRIES --></div>
+  <div id="outside">
+    <div class="outside-head"><p class="kicker">Outside the catalog</p><h2>Not in the official catalog</h2><p>Public plugins that aren't listed in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit, and Hermes maintainers haven't reviewed them, so read each README before you install.</p></div>
+    <div class="grid" id="entries-outside"><!-- OUTSIDE --></div>
+  </div>
   <div class="empty" id="empty" hidden>Nothing matches that. Try another word or category.<button type="button" id="reset">Clear search and filters</button></div>
 </section>
 <section class="how" aria-labelledby="how-title">
@@ -183,7 +197,7 @@ footer a{color:var(--accent)}
 document.querySelector('#tools').hidden=false;
 const search=document.querySelector('#search'),entries=[...document.querySelectorAll('.entry')],filters=[...document.querySelectorAll('[data-filter]')],results=document.querySelector('#results');
 let active='All';
-function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
+function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#outside').hidden=!entries.some(e=>!e.hidden&&e.dataset.listing!=='catalog');document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
 search.addEventListener('input',update);filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;update()}));
 document.querySelector('#reset').addEventListener('click',()=>{search.value='';active='All';update();search.focus()});
 // Screenshot and demo links open in a window-styled viewer instead of leaving the page.

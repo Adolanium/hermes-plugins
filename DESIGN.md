@@ -1,6 +1,6 @@
 # Design record
 
-The site helps Hermes users find the plugins listed in the Hermes plugin catalog, see what each one does, and copy the commands that install it. Only catalog entries appear; nothing here lists a plugin the catalog has not admitted.
+The site helps Hermes users find the plugins listed in the Hermes plugin catalog, see what each one does, and copy the commands that install it. Catalog entries come first. Public plugins the catalog has not admitted follow in their own section, with dashed window frames, a "Not in catalog" or "Catalog review pending" chip, and a note that they install from GitHub unreviewed.
 
 ## Visual direction
 

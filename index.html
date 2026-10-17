@@ -67,7 +67,7 @@ h1 em{font-style:italic;color:var(--accent)}
 .filters span{opacity:.7;margin-left:6px}
 .results{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:16px 0 22px}
 /* Cards */
-#entries{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:26px}
 .entry{display:flex;flex-direction:column;border:1px solid var(--line-2);background:var(--bg);scroll-margin-top:24px;transition:transform .18s ease-out,box-shadow .18s ease-out}
 .entry:hover,.entry:focus-within{transform:translate(-3px,-3px);box-shadow:6px 6px 0 rgba(201,200,255,.14)}
 .art{display:block;border-bottom:1px solid var(--line)}
@@ -78,6 +78,16 @@ h1 em{font-style:italic;color:var(--accent)}
 .entry-meta span{border:1px solid var(--line);padding:2px 7px}
 .entry-meta span:first-child{color:var(--ink);border-color:var(--line-2)}
 .entry-meta .sha{text-transform:none}
+.entry-meta .listing{color:var(--bg);background:var(--muted);border-color:var(--muted)}
+.entry-outside{border-style:dashed}
+.entry-outside .bar{background:transparent}
+.setup{margin:16px 0 0;padding:10px 12px;border:1px dashed var(--line-2);font-size:13px;color:var(--muted)}
+.setup a{color:var(--accent)}
+.unreviewed{margin:10px 0 0;font-size:12px;color:var(--muted)}
+.outside-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:12px 48px;align-items:end;margin:72px 0 26px;padding-top:40px;border-top:1px solid var(--line)}
+.outside-head h2{margin:0;font:normal clamp(30px,3.6vw,44px)/1.08 var(--serif);letter-spacing:-.02em}
+.outside-head p{margin:0;color:var(--muted);font-size:14px;max-width:62ch}
+.outside-head .kicker{grid-column:1/-1;margin:0}
 h2{font:normal 29px/1.15 var(--serif);letter-spacing:-.02em;margin:14px 0 8px}
 h2 a{text-decoration:none}
 h2 a:hover{text-decoration:underline}
@@ -132,7 +142,7 @@ footer a{color:var(--accent)}
 @media (max-width:640px){.viewer{width:calc(100vw - 16px);max-height:calc(100dvh - 16px)}.viewer-stage{padding:10px}.viewer-stage img,.viewer-stage video{max-height:calc(100dvh - 170px)}.viewer-nav{top:auto;bottom:16px;transform:none}}
 .status{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:var(--accent);color:var(--bg);padding:10px 18px;font-size:13px;max-width:90vw;z-index:9}
 @media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding:40px 0}.how{grid-template-columns:1fr}}
-@media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}#entries{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
+@media (max-width:640px){.shell{padding:0 16px}.top nav{gap:14px}.top nav a:first-child{display:none}.facts{grid-template-columns:1fr}.facts div{border-right:0;border-bottom:1px solid var(--line)}.facts div:last-child{border-bottom:0}.grid{grid-template-columns:minmax(0,1fr)}.ghost{display:none}h2{font-size:26px}}
 @media (prefers-reduced-motion:reduce){.entry{transition:none}.entry:hover,.entry:focus-within{transform:none}}
 </style>
 </head>
@@ -143,7 +153,7 @@ footer a{color:var(--accent)}
 <main>
 <section class="hero" aria-labelledby="title">
   <div>
-    <p class="kicker"><span>15</span> plugins &nbsp;·&nbsp; in the official catalog</p>
+    <p class="kicker"><span>15</span> in the official catalog &nbsp;·&nbsp; <span>4</span> more outside it</p>
     <h1 id="title">Make Hermes <em>your own.</em></h1>
     <p class="lede">Desktop panels, agent tools, web backends and model providers for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a>. Every one is reviewed and pinned to an exact commit in the Hermes plugin catalog, so one command installs it.</p>
     <div class="hero-actions"><a class="button solid" href="#plugins">Browse plugins</a><a class="button" href="https://hermes-agent.nousresearch.com/docs/user-guide/features/plugin-catalog">How the catalog works</a></div>
@@ -159,9 +169,9 @@ footer a{color:var(--accent)}
   <div><b>Pinned</b><span>each install checks out a reviewed commit</span></div>
 </section>
 <section id="plugins" aria-label="Plugins">
-  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>15</span></button><button type="button" data-filter="Desktop" aria-pressed="false">Desktop <span>10</span></button><button type="button" data-filter="Tools" aria-pressed="false">Tools <span>3</span></button><button type="button" data-filter="Web" aria-pressed="false">Web <span>1</span></button><button type="button" data-filter="Models" aria-pressed="false">Models <span>1</span></button></div></div>
-  <p class="results" id="results" role="status">15 plugins</p>
-  <div id="entries"><article class="entry" id="hermes-ledgerline" data-category="Desktop" data-search="ledgerline hermes-ledgerline inspect session costs and usage in hermes desktop. desktop">
+  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>19</span></button><button type="button" data-filter="Desktop" aria-pressed="false">Desktop <span>11</span></button><button type="button" data-filter="Tools" aria-pressed="false">Tools <span>5</span></button><button type="button" data-filter="Web" aria-pressed="false">Web <span>2</span></button><button type="button" data-filter="Models" aria-pressed="false">Models <span>1</span></button></div></div>
+  <p class="results" id="results" role="status">19 plugins</p>
+  <div class="grid" id="entries"><article class="entry" id="hermes-ledgerline" data-category="Desktop" data-listing="catalog" data-search="ledgerline hermes-ledgerline inspect session costs and usage in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-ledgerline</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-ledgerline" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-ledgerline.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
   <div class="entry-body">
@@ -169,14 +179,15 @@ footer a{color:var(--accent)}
     <h2><a href="https://github.com/Adolanium/hermes-ledgerline">Ledgerline</a></h2>
     <p class="summary">Inspect session costs and usage in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-ledgerline</span>
-hermes plugins enable <span class="nb">hermes-ledgerline</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ledgerline
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-ledgerline</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-ledgerline</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ledgerline
 hermes plugins enable hermes-ledgerline" aria-label="Copy install commands for Ledgerline">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ledgerline">Catalog page</a><a href="https://github.com/Adolanium/hermes-ledgerline#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Ledgerline">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-nous-prices" data-category="Desktop" data-search="nous prices hermes-nous-prices browse nous portal model prices and account balances in hermes desktop. desktop">
+<article class="entry" id="hermes-nous-prices" data-category="Desktop" data-listing="catalog" data-search="nous prices hermes-nous-prices browse nous portal model prices and account balances in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-nous-prices</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-nous-prices" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-nous-prices.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
   <div class="entry-body">
@@ -184,14 +195,15 @@ hermes plugins enable hermes-ledgerline" aria-label="Copy install commands for L
     <h2><a href="https://github.com/Adolanium/hermes-nous-prices">Nous Prices</a></h2>
     <p class="summary">Browse Nous Portal model prices and account balances in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-nous-prices</span>
-hermes plugins enable <span class="nb">hermes-nous-prices</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-nous-prices
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-nous-prices</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-nous-prices</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-nous-prices
 hermes plugins enable hermes-nous-prices" aria-label="Copy install commands for Nous Prices">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-nous-prices">Catalog page</a><a href="https://github.com/Adolanium/hermes-nous-prices#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/53580d75-693a-4f9c-89dd-828d2dd4eece&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Nous Prices">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-office" data-category="Desktop" data-search="office hermes-office view and manage bot mode agents in a shared office in hermes desktop. desktop">
+<article class="entry" id="hermes-office" data-category="Desktop" data-listing="catalog" data-search="office hermes-office view and manage bot mode agents in a shared office in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-office</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-office" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-office.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
   <div class="entry-body">
@@ -199,14 +211,15 @@ hermes plugins enable hermes-nous-prices" aria-label="Copy install commands for 
     <h2><a href="https://github.com/Adolanium/hermes-office">Office</a></h2>
     <p class="summary">View and manage Bot Mode agents in a shared office in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-office</span>
-hermes plugins enable <span class="nb">hermes-office</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-office
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-office</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-office</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-office
 hermes plugins enable hermes-office" aria-label="Copy install commands for Office">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-office">Catalog page</a><a href="https://github.com/Adolanium/hermes-office#readme">Source</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-resetwatch" data-category="Desktop" data-search="resetwatch hermes-resetwatch track subscription quotas and reset times in hermes desktop. desktop">
+<article class="entry" id="hermes-resetwatch" data-category="Desktop" data-listing="catalog" data-search="resetwatch hermes-resetwatch track subscription quotas and reset times in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-resetwatch</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-resetwatch" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-resetwatch.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -214,14 +227,15 @@ hermes plugins enable hermes-office" aria-label="Copy install commands for Offic
     <h2><a href="https://github.com/Adolanium/hermes-resetwatch">Resetwatch</a></h2>
     <p class="summary">Track subscription quotas and reset times in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-resetwatch</span>
-hermes plugins enable <span class="nb">hermes-resetwatch</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-resetwatch
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-resetwatch</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-resetwatch</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-resetwatch
 hermes plugins enable hermes-resetwatch" aria-label="Copy install commands for Resetwatch">Copy</button></div>
+
     <details><summary>What it touches</summary><p>probe.py re-executes itself under the Hermes Python interpreter located via HERMES_PYTHON / VIRTUAL_ENV / the parent process or the Hermes installer&#39;s managed venv (HERMES_HOME/installs); it reads provider API keys from the Hermes .env, Hermes&#39;s own saved OAuth logins (auth.json credential pool, read-only), the Vaultwarden plugin&#39;s local secret cache (cache/vaultwarden_cache.json, read-only, only when Vaultwarden is the sole enabled secret source) and Docker s6 container env files, plus other coding-assistant CLIs&#39; local logins (including macOS keychain entries), and sends each key only to its own vendor&#39;s usage endpoint.</p></details>
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-resetwatch">Catalog page</a><a href="https://github.com/Adolanium/hermes-resetwatch#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/633e7697-a50b-42c1-86c7-cc36c28dcd64&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Resetwatch">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-rss" data-category="Desktop" data-search="rss hermes-rss read rss and atom feeds and discuss articles in hermes desktop. desktop">
+<article class="entry" id="hermes-rss" data-category="Desktop" data-listing="catalog" data-search="rss hermes-rss read rss and atom feeds and discuss articles in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-rss</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-rss" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-rss.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -229,14 +243,15 @@ hermes plugins enable hermes-resetwatch" aria-label="Copy install commands for R
     <h2><a href="https://github.com/Adolanium/hermes-rss">RSS</a></h2>
     <p class="summary">Read RSS and Atom feeds and discuss articles in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-rss</span>
-hermes plugins enable <span class="nb">hermes-rss</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-rss
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-rss</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-rss</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-rss
 hermes plugins enable hermes-rss" aria-label="Copy install commands for RSS">Copy</button></div>
+
     <details><summary>What it touches</summary><p>feeds and full articles are fetched with curl through the gateway&#39;s shell.exec on the connected Hermes host (public-IPv4 SSRF guard); opt-in AI grading sends article excerpts to your configured model and creates HERMES_HOME/skills/rss-importance-grading/SKILL.md if missing; opt-in image loading fetches publisher images directly from Desktop.</p></details>
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-rss">Catalog page</a><a href="https://github.com/Adolanium/hermes-rss#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/dd454b2a-e504-4cb0-a886-15cd2b173e53&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="RSS">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-session-diff" data-category="Desktop" data-search="session diff hermes-session-diff persistent session file diffs, run comparisons, and individual edit history in hermes desktop. desktop">
+<article class="entry" id="hermes-session-diff" data-category="Desktop" data-listing="catalog" data-search="session diff hermes-session-diff persistent session file diffs, run comparisons, and individual edit history in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-session-diff</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-session-diff" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-session-diff.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -244,14 +259,15 @@ hermes plugins enable hermes-rss" aria-label="Copy install commands for RSS">Cop
     <h2><a href="https://github.com/Adolanium/hermes-session-diff">Session Diff</a></h2>
     <p class="summary">Persistent session file diffs, run comparisons, and individual edit history in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-session-diff</span>
-hermes plugins enable <span class="nb">hermes-session-diff</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-session-diff
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-session-diff</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-session-diff</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-session-diff
 hermes plugins enable hermes-session-diff" aria-label="Copy install commands for Session Diff">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-session-diff">Catalog page</a><a href="https://github.com/Adolanium/hermes-session-diff#readme">Source</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-ssh" data-category="Desktop" data-search="ssh hermes-ssh manage ssh connections and remote workspaces in hermes desktop. desktop">
+<article class="entry" id="hermes-ssh" data-category="Desktop" data-listing="catalog" data-search="ssh hermes-ssh manage ssh connections and remote workspaces in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-ssh</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-ssh" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-ssh.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -259,14 +275,15 @@ hermes plugins enable hermes-session-diff" aria-label="Copy install commands for
     <h2><a href="https://github.com/Adolanium/hermes-ssh">SSH</a></h2>
     <p class="summary">Manage SSH connections and remote workspaces in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-ssh</span>
-hermes plugins enable <span class="nb">hermes-ssh</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ssh
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-ssh</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-ssh</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-ssh
 hermes plugins enable hermes-ssh" aria-label="Copy install commands for SSH">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ssh">Catalog page</a><a href="https://github.com/Adolanium/hermes-ssh#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/292680af-0158-4f94-b1bd-9d5b35d01728&quot;,&quot;video&quot;:true,&quot;demo&quot;:true}]" data-title="SSH">Demo</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-tailscale" data-category="Desktop" data-search="tailscale hermes-tailscale browse tailscale devices and connect to remote hermes instances in hermes desktop. desktop">
+<article class="entry" id="hermes-tailscale" data-category="Desktop" data-listing="catalog" data-search="tailscale hermes-tailscale browse tailscale devices and connect to remote hermes instances in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-tailscale</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-tailscale" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-tailscale.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -274,14 +291,15 @@ hermes plugins enable hermes-ssh" aria-label="Copy install commands for SSH">Cop
     <h2><a href="https://github.com/Adolanium/hermes-tailscale">Tailscale</a></h2>
     <p class="summary">Browse Tailscale devices and connect to remote Hermes instances in Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-tailscale</span>
-hermes plugins enable <span class="nb">hermes-tailscale</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-tailscale
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-tailscale</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-tailscale</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-tailscale
 hermes plugins enable hermes-tailscale" aria-label="Copy install commands for Tailscale">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-tailscale">Catalog page</a><a href="https://github.com/Adolanium/hermes-tailscale#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/28516903-8f3a-42a1-9a9d-823981272073&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Tailscale">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-terminal" data-category="Desktop" data-search="terminal hermes-terminal run the hermes terminal interface in a hermes desktop workspace tab. desktop">
+<article class="entry" id="hermes-terminal" data-category="Desktop" data-listing="catalog" data-search="terminal hermes-terminal run the hermes terminal interface in a hermes desktop workspace tab. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-terminal</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-terminal" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-terminal.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -289,14 +307,15 @@ hermes plugins enable hermes-tailscale" aria-label="Copy install commands for Ta
     <h2><a href="https://github.com/Adolanium/hermes-terminal">Terminal</a></h2>
     <p class="summary">Run the Hermes terminal interface in a Hermes Desktop workspace tab.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-terminal</span>
-hermes plugins enable <span class="nb">hermes-terminal</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-terminal
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-terminal</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-terminal</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-terminal
 hermes plugins enable hermes-terminal" aria-label="Copy install commands for Terminal">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-terminal">Catalog page</a><a href="https://github.com/Adolanium/hermes-terminal#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/3790f760-7836-41ce-a0a0-a2b9ee4d4124&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Terminal">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="hermes-toolsmith" data-category="Desktop" data-search="toolsmith hermes-toolsmith local developer tools, transformation recipes, and reviewed chat handoff inside hermes desktop. desktop">
+<article class="entry" id="hermes-toolsmith" data-category="Desktop" data-listing="catalog" data-search="toolsmith hermes-toolsmith local developer tools, transformation recipes, and reviewed chat handoff inside hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-toolsmith</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-toolsmith" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-toolsmith.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -304,14 +323,15 @@ hermes plugins enable hermes-terminal" aria-label="Copy install commands for Ter
     <h2><a href="https://github.com/Adolanium/hermes-toolsmith">Toolsmith</a></h2>
     <p class="summary">Local developer tools, transformation recipes, and reviewed chat handoff inside Hermes Desktop.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">hermes-toolsmith</span>
-hermes plugins enable <span class="nb">hermes-toolsmith</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-toolsmith
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-toolsmith</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-toolsmith</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-toolsmith
 hermes plugins enable hermes-toolsmith" aria-label="Copy install commands for Toolsmith">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-toolsmith">Catalog page</a><a href="https://github.com/Adolanium/hermes-toolsmith#readme">Source</a></p>
   </div>
 </article>
-<article class="entry" id="clinepass" data-category="Models" data-search="clinepass clinepass clinepass model provider with live model discovery and a curated fallback catalog. models">
+<article class="entry" id="clinepass" data-category="Models" data-listing="catalog" data-search="clinepass clinepass clinepass model provider with live model discovery and a curated fallback catalog. models catalog">
   <div class="bar"><span class="bar-name">clinepass</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-clinepass" tabindex="-1" aria-hidden="true"><img src="assets/banners/clinepass.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -319,14 +339,15 @@ hermes plugins enable hermes-toolsmith" aria-label="Copy install commands for To
     <h2><a href="https://github.com/Adolanium/hermes-clinepass">ClinePass</a></h2>
     <p class="summary">ClinePass model provider with live model discovery and a curated fallback catalog.</p>
     <p class="env">Needs <code>CLINE_API_KEY</code></p>
-    <div class="command"><code>hermes plugins install <span class="nb">clinepass</span>
-hermes plugins enable <span class="nb">clinepass</span></code><button type="button" class="copy" data-command="hermes plugins install clinepass
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">clinepass</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">clinepass</span></code><button type="button" class="copy" data-command="hermes plugins install clinepass
 hermes plugins enable clinepass" aria-label="Copy install commands for ClinePass">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/clinepass">Catalog page</a><a href="https://github.com/Adolanium/hermes-clinepass#readme">Source</a></p>
   </div>
 </article>
-<article class="entry" id="devin" data-category="Tools" data-search="hermes devin devin delegate coding tasks to the devin cli, on your computer or in devin cloud, with live progress cards and change review in hermes desktop. every launch goes through hermes approval; cloud runs need a separate cloud-managed-permissions confirmation. tools">
+<article class="entry" id="devin" data-category="Tools" data-listing="catalog" data-search="hermes devin devin delegate coding tasks to the devin cli, on your computer or in devin cloud, with live progress cards and change review in hermes desktop. every launch goes through hermes approval; cloud runs need a separate cloud-managed-permissions confirmation. tools catalog">
   <div class="bar"><span class="bar-name">devin</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-devin" tabindex="-1" aria-hidden="true"><img src="assets/banners/devin.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -334,14 +355,15 @@ hermes plugins enable clinepass" aria-label="Copy install commands for ClinePass
     <h2><a href="https://github.com/Adolanium/hermes-devin">Hermes Devin</a></h2>
     <p class="summary">Delegate coding tasks to the Devin CLI, on your computer or in Devin Cloud, with live progress cards and change review in Hermes Desktop. Every launch goes through Hermes approval; Cloud runs need a separate Cloud-managed-permissions confirmation.</p>
 
-    <div class="command"><code>hermes plugins install <span class="nb">devin</span>
-hermes plugins enable <span class="nb">devin</span></code><button type="button" class="copy" data-command="hermes plugins install devin
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">devin</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">devin</span></code><button type="button" class="copy" data-command="hermes plugins install devin
 hermes plugins enable devin" aria-label="Copy install commands for Hermes Devin">Copy</button></div>
+
     <details><summary>What it touches</summary><p>spawns the vendor devin CLI from PATH or cli_path (devin acp, devin acp --cloud, devin --print, devin auth status, devin models list); the CLI edits files and runs shell commands in a folder the model picks (any folder unless allowed_roots is set) under the configured permission mode (accept-edits/smart auto-allow edits, dangerous auto-allows everything and needs allow_dangerous: true), and talks to Cognition&#39;s servers; Devin Cloud runs use Cognition-managed permissions that Hermes does not gate. Every model-initiated launch goes through Hermes approval; follow-ups typed on a Desktop run card and answers to Devin&#39;s prompts on the card start or allow actions on that click without a Hermes prompt (unanswered card prompts are denied after 300 s by default). Uses the existing Devin CLI login and stores no credentials; Hermes provider, bot and tool secrets are stripped from the child environment (extra_env is passed as set). Background runs continue after the turn up to their timeout and post Devin&#39;s output back into the conversation as a message when they finish. Run history (prompts, diffs, command output) and model preferences are saved under plugin-data/devin unless persist_runs is off. Independent community add-on, not affiliated with Cognition.</p></details>
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/devin">Catalog page</a><a href="https://github.com/Adolanium/hermes-devin#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Hermes Devin">Screenshot</a></p>
   </div>
 </article>
-<article class="entry" id="openalex" data-category="Tools" data-search="openalex openalex scholarly search, citation traversal, grouped counts, and fulltext access through openalex with session spending limits. tools">
+<article class="entry" id="openalex" data-category="Tools" data-listing="catalog" data-search="openalex openalex scholarly search, citation traversal, grouped counts, and fulltext access through openalex with session spending limits. tools catalog">
   <div class="bar"><span class="bar-name">openalex</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-plugin-openalex" tabindex="-1" aria-hidden="true"><img src="assets/banners/openalex.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -349,14 +371,15 @@ hermes plugins enable devin" aria-label="Copy install commands for Hermes Devin"
     <h2><a href="https://github.com/Adolanium/hermes-plugin-openalex">OpenAlex</a></h2>
     <p class="summary">Scholarly search, citation traversal, grouped counts, and fulltext access through OpenAlex with session spending limits.</p>
     <p class="env">Needs <code>OPENALEX_API_KEY</code></p>
-    <div class="command"><code>hermes plugins install <span class="nb">openalex</span>
-hermes plugins enable <span class="nb">openalex</span></code><button type="button" class="copy" data-command="hermes plugins install openalex
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">openalex</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">openalex</span></code><button type="button" class="copy" data-command="hermes plugins install openalex
 hermes plugins enable openalex" aria-label="Copy install commands for OpenAlex">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/openalex">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-openalex#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-plugin-openalex/main/docs/demo.gif&quot;,&quot;video&quot;:false,&quot;demo&quot;:true}]" data-title="OpenAlex">Demo</a></p>
   </div>
 </article>
-<article class="entry" id="shodan" data-category="Tools" data-search="shodan shodan search internet-connected hosts, open ports, dns and cves through shodan, with a credit ledger that stops before your monthly query credits run out. tools">
+<article class="entry" id="shodan" data-category="Tools" data-listing="catalog" data-search="shodan shodan search internet-connected hosts, open ports, dns and cves through shodan, with a credit ledger that stops before your monthly query credits run out. tools catalog">
   <div class="bar"><span class="bar-name">shodan</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-plugin-shodan" tabindex="-1" aria-hidden="true"><img src="assets/banners/shodan.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -364,14 +387,15 @@ hermes plugins enable openalex" aria-label="Copy install commands for OpenAlex">
     <h2><a href="https://github.com/Adolanium/hermes-plugin-shodan">Shodan</a></h2>
     <p class="summary">Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out.</p>
     <p class="env">Needs <code>SHODAN_API_KEY</code></p>
-    <div class="command"><code>hermes plugins install <span class="nb">shodan</span>
-hermes plugins enable <span class="nb">shodan</span></code><button type="button" class="copy" data-command="hermes plugins install shodan
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">shodan</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">shodan</span></code><button type="button" class="copy" data-command="hermes plugins install shodan
 hermes plugins enable shodan" aria-label="Copy install commands for Shodan">Copy</button></div>
+
 
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/shodan">Catalog page</a><a href="https://github.com/Adolanium/hermes-plugin-shodan#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-plugin-shodan/main/docs/demo.gif&quot;,&quot;video&quot;:false,&quot;demo&quot;:true}]" data-title="Shodan">Demo</a></p>
   </div>
 </article>
-<article class="entry" id="cloudflare-web-search" data-category="Web" data-search="cloudflare web search cloudflare-web-search cloudflare web search backend for hermes&#39; existing web_search tool, with ceramic, exa, or linkup selected in plugin settings. search only; keep a separate extract backend. web">
+<article class="entry" id="cloudflare-web-search" data-category="Web" data-listing="catalog" data-search="cloudflare web search cloudflare-web-search cloudflare web search backend for hermes&#39; existing web_search tool, with ceramic, exa, or linkup selected in plugin settings. search only; keep a separate extract backend. web catalog">
   <div class="bar"><span class="bar-name">cloudflare-web-search</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-cloudflare-web-search" tabindex="-1" aria-hidden="true"><img src="assets/banners/cloudflare-web-search.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -379,13 +403,77 @@ hermes plugins enable shodan" aria-label="Copy install commands for Shodan">Copy
     <h2><a href="https://github.com/Adolanium/hermes-cloudflare-web-search">Cloudflare Web Search</a></h2>
     <p class="summary">Cloudflare Web Search backend for Hermes&#39; existing web_search tool, with Ceramic, Exa, or Linkup selected in plugin settings. Search only; keep a separate extract backend.</p>
     <p class="env">Needs <code>CLOUDFLARE_WEB_SEARCH_API_TOKEN</code></p>
-    <div class="command"><code>hermes plugins install <span class="nb">cloudflare-web-search</span>
-hermes plugins enable <span class="nb">cloudflare-web-search</span></code><button type="button" class="copy" data-command="hermes plugins install cloudflare-web-search
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">cloudflare-web-search</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">cloudflare-web-search</span></code><button type="button" class="copy" data-command="hermes plugins install cloudflare-web-search
 hermes plugins enable cloudflare-web-search" aria-label="Copy install commands for Cloudflare Web Search">Copy</button></div>
+
     <details><summary>What it touches</summary><p>sends queries, result limits, gateway IDs, and optional BYOK aliases to api.cloudflare.com, which forwards searches to the selected provider and records them in AI Gateway logs. Requests can consume gateway credits or provider quota. Reads its own settings and CLOUDFLARE_WEB_SEARCH_API_TOKEN through Hermes&#39; profile-scoped APIs. Registers one web provider, with no new tools, hooks, background processes, file writes, or self-updater. Independent community plugin.</p></details>
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/cloudflare-web-search">Catalog page</a><a href="https://github.com/Adolanium/hermes-cloudflare-web-search#readme">Source</a></p>
   </div>
 </article></div>
+  <div id="outside">
+    <div class="outside-head"><p class="kicker">Outside the catalog</p><h2>Not in the official catalog</h2><p>Public plugins that aren't listed in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit, and Hermes maintainers haven't reviewed them, so read each README before you install.</p></div>
+    <div class="grid" id="entries-outside"><article class="entry entry-outside" id="glyphwake" data-category="Desktop" data-listing="outside" data-search="glyphwake glyphwake click the empty chat in hermes desktop and watch a wave of ascii characters decode into a wordmark. desktop not in catalog">
+  <div class="bar"><span class="bar-name">glyphwake</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-glyphwake" tabindex="-1" aria-hidden="true"><img src="assets/banners/glyphwake.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="listing">Not in catalog</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-glyphwake">Glyphwake</a></h2>
+    <p class="summary">Click the empty chat in Hermes Desktop and watch a wave of ASCII characters decode into a wordmark.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-glyphwake</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">glyphwake</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-glyphwake
+hermes plugins enable glyphwake" aria-label="Copy install commands for Glyphwake">Copy</button></div>
+    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
+
+    <p class="entry-links"><a href="https://github.com/Adolanium/hermes-glyphwake#readme">Source</a></p>
+  </div>
+</article>
+<article class="entry entry-outside" id="flymes" data-category="Tools" data-listing="outside" data-search="flymes flymes an experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent&#39;s next tool call, with a live desktop panel to watch it decide. tools not in catalog">
+  <div class="bar"><span class="bar-name">flymes</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/Flymes" tabindex="-1" aria-hidden="true"><img src="assets/banners/flymes.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Tools</span><span>v0.3.0</span><span class="listing">Not in catalog</span></p>
+    <h2><a href="https://github.com/Adolanium/Flymes">Flymes</a></h2>
+    <p class="summary">An experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent&#39;s next tool call, with a live Desktop panel to watch it decide.</p>
+
+    <p class="setup">Needs a few setup steps first. <a href="https://github.com/Adolanium/Flymes#install">Read the setup guide</a>.</p>
+    <p class="unreviewed">Not reviewed by Hermes maintainers.</p>
+
+    <p class="entry-links"><a href="https://github.com/Adolanium/Flymes#readme">Source</a></p>
+  </div>
+</article>
+<article class="entry entry-outside" id="resume-session" data-category="Tools" data-listing="outside" data-search="resume session resume-session pick up recent claude code, codex and cursor sessions inside hermes, with a compact pick-up card and the foreign transcript kept as inert history. tools not in catalog">
+  <div class="bar"><span class="bar-name">resume-session</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-plugin-resume-session" tabindex="-1" aria-hidden="true"><img src="assets/banners/resume-session.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Tools</span><span>v0.3.1</span><span class="listing">Not in catalog</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-plugin-resume-session">Resume Session</a></h2>
+    <p class="summary">Pick up recent Claude Code, Codex and Cursor sessions inside Hermes, with a compact pick-up card and the foreign transcript kept as inert history.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-plugin-resume-session</span> <span class="nb">--enable</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-plugin-resume-session --enable" aria-label="Copy install commands for Resume Session">Copy</button></div>
+    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
+
+    <p class="entry-links"><a href="https://github.com/Adolanium/hermes-plugin-resume-session#readme">Source</a></p>
+  </div>
+</article>
+<article class="entry entry-outside" id="hermes-jina" data-category="Web" data-listing="pending" data-search="hermes jina hermes-jina jina reader web backend for hermes agent: read any page as markdown, search the web web catalog review pending">
+  <div class="bar"><span class="bar-name">hermes-jina</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-jina" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-jina.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Web</span><span>v0.1.0</span><span class="listing">Catalog review pending</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-jina">Hermes Jina</a></h2>
+    <p class="summary">Jina Reader web backend for Hermes Agent: read any page as Markdown, search the web</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-jina</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-jina</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-jina
+hermes plugins enable hermes-jina" aria-label="Copy install commands for Hermes Jina">Copy</button></div>
+    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
+
+    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/140343">Catalog PR</a><a href="https://github.com/Adolanium/hermes-jina#readme">Source</a></p>
+  </div>
+</article></div>
+  </div>
   <div class="empty" id="empty" hidden>Nothing matches that. Try another word or category.<button type="button" id="reset">Clear search and filters</button></div>
 </section>
 <section class="how" aria-labelledby="how-title">
@@ -407,7 +495,7 @@ hermes plugins enable cloudflare-web-search" aria-label="Copy install commands f
 document.querySelector('#tools').hidden=false;
 const search=document.querySelector('#search'),entries=[...document.querySelectorAll('.entry')],filters=[...document.querySelectorAll('[data-filter]')],results=document.querySelector('#results');
 let active='All';
-function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
+function update(){let count=0;const q=search.value.trim().toLowerCase();for(const e of entries){e.hidden=!(active==='All'||e.dataset.category===active)||!e.dataset.search.includes(q);if(!e.hidden)count++}results.textContent=`${count} of ${entries.length} plugins${active==='All'?'':' · '+active}`;document.querySelector('#outside').hidden=!entries.some(e=>!e.hidden&&e.dataset.listing!=='catalog');document.querySelector('#empty').hidden=count!==0;for(const b of filters)b.setAttribute('aria-pressed',String(b.dataset.filter===active))}
 search.addEventListener('input',update);filters.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;update()}));
 document.querySelector('#reset').addEventListener('click',()=>{search.value='';active='All';update();search.focus()});
 // Screenshot and demo links open in a window-styled viewer instead of leaving the page.

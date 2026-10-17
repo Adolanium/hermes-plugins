@@ -5,6 +5,11 @@
     "branch": "main",
     "path": "plugin-catalog"
   },
+  "exclude": [
+    "hermes-plugins",
+    "hermes-agent-fuzzer",
+    "hermes-gadget-sdk"
+  ],
   "titles": {
     "clinepass": "ClinePass",
     "devin": "Hermes × Devin",
@@ -18,11 +23,34 @@
     "hermes-tailscale": "Tailscale",
     "hermes-terminal": "Terminal",
     "hermes-toolsmith": "Toolsmith",
-    "hermes-jina": "Jina Reader",
+    "hermes-jina": "Hermes Jina",
     "openalex": "OpenAlex",
-    "shodan": "Shodan"
+    "shodan": "Shodan",
+    "flymes": "Flymes",
+    "glyphwake": "Glyphwake",
+    "resume-session": "Resume Session"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
+  },
+  "outside": {
+    "hermes-jina": {
+      "category": "Web",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/140343"
+    },
+    "hermes-glyphwake": {
+      "category": "Desktop",
+      "summary": "Click the empty chat in Hermes Desktop and watch a wave of ASCII characters decode into a wordmark."
+    },
+    "hermes-plugin-resume-session": {
+      "category": "Tools",
+      "summary": "Pick up recent Claude Code, Codex and Cursor sessions inside Hermes, with a compact pick-up card and the foreign transcript kept as inert history."
+    },
+    "Flymes": {
+      "category": "Tools",
+      "install": "",
+      "setup": "https://github.com/Adolanium/Flymes#install",
+      "summary": "An experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent's next tool call, with a live Desktop panel to watch it decide."
+    }
   }
 }

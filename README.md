@@ -11,11 +11,11 @@
   Desktop panels, agent tools, web backends and model providers for [Hermes Agent](https://github.com/NousResearch/hermes-agent).
   Every one is listed in the official Hermes plugin catalog, pinned to a reviewed commit, one command away.
 
-  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->15<!-- /COUNT --> IN THE CATALOG</sub>
+  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->15<!-- /COUNT --> IN THE CATALOG &nbsp;·&nbsp; <!-- OUTSIDE_COUNT -->4<!-- /OUTSIDE_COUNT --> MORE OUTSIDE IT</sub>
 
   <br /><br />
 
-  [Browse the site](https://adolanium.github.io/hermes-plugins/) &nbsp;·&nbsp; [The plugins](#the-collection) &nbsp;·&nbsp; [Install one](#install-one-in-two-commands) &nbsp;·&nbsp; [How this list is built](#how-this-list-is-built)
+  [Browse the site](https://adolanium.github.io/hermes-plugins/) &nbsp;·&nbsp; [The plugins](#the-collection) &nbsp;·&nbsp; [Outside the catalog](#outside-the-catalog) &nbsp;·&nbsp; [Install one](#install-one-in-two-commands) &nbsp;·&nbsp; [How this list is built](#how-this-list-is-built)
 
 </div>
 
@@ -66,6 +66,23 @@ All of them are in the [Hermes plugin catalog](https://hermes-agent.nousresearch
 </table>
 <!-- PLUGINS:END -->
 
+## Outside the catalog
+
+<!-- OUTSIDE_COUNT -->4<!-- /OUTSIDE_COUNT --> more public plugins that aren't in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit and haven't been reviewed by Hermes maintainers, so read each README before you install.
+
+<!-- OUTSIDE:START -->
+<table>
+<tr>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-glyphwake"><img src="assets/banners/glyphwake.webp" alt="Glyphwake banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-glyphwake">Glyphwake</a></strong> &nbsp;<sub>DESKTOP · v0.1.0 · NOT IN CATALOG</sub><br />Click the empty chat in Hermes Desktop and watch a wave of ASCII characters decode into a wordmark.<br /><code>hermes plugins install Adolanium/hermes-glyphwake</code></td>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/Flymes"><img src="assets/banners/flymes.webp" alt="Flymes banner" /></a><br /><strong><a href="https://github.com/Adolanium/Flymes">Flymes</a></strong> &nbsp;<sub>TOOLS · v0.3.0 · NOT IN CATALOG</sub><br />An experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent&#39;s next tool call, with a live Desktop panel to watch it decide.<br /><a href="https://github.com/Adolanium/Flymes#install">Setup guide</a></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-plugin-resume-session"><img src="assets/banners/resume-session.webp" alt="Resume Session banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-plugin-resume-session">Resume Session</a></strong> &nbsp;<sub>TOOLS · v0.3.1 · NOT IN CATALOG</sub><br />Pick up recent Claude Code, Codex and Cursor sessions inside Hermes, with a compact pick-up card and the foreign transcript kept as inert history.<br /><code>hermes plugins install Adolanium/hermes-plugin-resume-session --enable</code></td>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-jina"><img src="assets/banners/hermes-jina.webp" alt="Hermes Jina banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-jina">Hermes Jina</a></strong> &nbsp;<sub>WEB · v0.1.0 · CATALOG REVIEW PENDING</sub><br />Jina Reader web backend for Hermes Agent: read any page as Markdown, search the web<br /><code>hermes plugins install Adolanium/hermes-jina</code></td>
+</tr>
+</table>
+<!-- OUTSIDE:END -->
+
 ## Install one in two commands
 
 ```bash
@@ -81,7 +98,7 @@ Updates arrive only after a reviewed pin bump lands in the catalog. Then `hermes
 
 | | |
 | --- | --- |
-| **From the catalog**<br />`scripts/build.mjs` reads [`plugin-catalog/`](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog) in Hermes Agent and keeps every entry whose repository is ours. Nothing else is listed. | **At the pinned version**<br />Names, descriptions, versions and pins come from the catalog entry, so the page shows what an install actually gets. |
+| **From the catalog**<br />`scripts/build.mjs` reads [`plugin-catalog/`](https://github.com/NousResearch/hermes-agent/tree/main/plugin-catalog) in Hermes Agent and keeps every entry whose repository is ours. Then it adds our other public repositories that have a `plugin.yaml`, marked as outside the catalog. Repositories in `exclude` are skipped. | **At the pinned version**<br />Names, descriptions, versions and pins come from the catalog entry, so the page shows what an install actually gets. |
 | **Refreshed daily**<br />GitHub Actions rebuilds and deploys the [site](https://adolanium.github.io/hermes-plugins/) on every push, on demand and daily at 05:23 UTC. A failed refresh keeps the last good page online. | **No dependencies**<br />Node.js 22 or newer and nothing else. `GITHUB_TOKEN` is optional and only raises the API rate limit. |
 
 To refresh by hand:
