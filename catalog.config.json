@@ -29,7 +29,8 @@
     "glyphwake": "Glyphwake",
     "resume-session": "Resume Session",
     "gadget": "Hermes Gadget",
-    "hermes-deepseek-web": "Hermes DeepSeek Web"
+    "hermes-deepseek-web": "Hermes DeepSeek Web",
+    "hermes-pantheon": "Pantheon"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
@@ -62,6 +63,12 @@
       "install": "hermes plugins install https://github.com/Adolanium/hermes-gadget-sdk/tree/main/plugin --enable\nhermes gateway setup",
       "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator.",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/140433"
+    },
+    "hermes-pantheon": {
+      "category": "Desktop",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141032",
+      "summary": "Ten Hermes Desktop themes in dithered classical marble, one god each, from indigo Olympus to parchment Caduceus. Install once, then switch with /skin.",
+      "install": "hermes plugins install Adolanium/hermes-pantheon"
     }
   }
 }
