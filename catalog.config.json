@@ -67,7 +67,7 @@
     "hermes-pantheon": {
       "category": "Desktop",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/141032",
-      "summary": "Ten Hermes Desktop themes in dithered classical marble, one god each, from indigo Olympus to parchment Caduceus. Install once, then switch with /skin.",
+      "summary": "Eighteen Hermes Desktop themes in dithered classical marble: all twelve Olympians plus Hades, Nyx, Helios, Selene and Medusa. Install once, then switch with /skin.",
       "install": "hermes plugins install Adolanium/hermes-pantheon"
     }
   }
