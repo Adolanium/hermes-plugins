@@ -43,5 +43,13 @@
   "hermes-memory-pane": {
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png",
     "kind": "screenshot"
+  },
+  "hermes-kemet": {
+    "source": "https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/thoth.png",
+    "kind": "screenshot"
+  },
+  "hermes-asgard": {
+    "source": "https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png",
+    "kind": "screenshot"
   }
 }

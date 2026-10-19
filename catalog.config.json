@@ -32,7 +32,9 @@
     "hermes-deepseek-web": "Hermes DeepSeek Web",
     "hermes-pantheon": "Pantheon",
     "hermes-tripo": "Tripo",
-    "hermes-memory-pane": "Memory Pane"
+    "hermes-memory-pane": "Memory Pane",
+    "hermes-kemet": "Kemet",
+    "hermes-asgard": "Asgard"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
@@ -79,6 +81,18 @@
     "hermes-memory-pane": {
       "category": "Desktop",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/141421"
+    },
+    "hermes-kemet": {
+      "category": "Desktop",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141677",
+      "install": "hermes plugins install Adolanium/hermes-kemet",
+      "summary": "Twelve Egyptian gods for Hermes Desktop, in painted relief and gold leaf, from Thoth to Hathor. Install once, then switch with /skin."
+    },
+    "hermes-asgard": {
+      "category": "Desktop",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141678",
+      "install": "hermes plugins install Adolanium/hermes-asgard",
+      "summary": "Twelve Norse gods for Hermes Desktop, carved in runestone and wood, from Odin to Bragi. Install once, then switch with /skin."
     }
   }
 }

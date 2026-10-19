@@ -11,7 +11,7 @@
   Desktop panels, agent tools, web backends and model providers for [Hermes Agent](https://github.com/NousResearch/hermes-agent).
   Every one is listed in the official Hermes plugin catalog, pinned to a reviewed commit, one command away.
 
-  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->18<!-- /COUNT --> IN THE CATALOG &nbsp;·&nbsp; <!-- OUTSIDE_COUNT -->6<!-- /OUTSIDE_COUNT --> MORE OUTSIDE IT</sub>
+  <sub>POWERED BY <a href="https://github.com/NousResearch/hermes-agent">HERMES AGENT</a> &nbsp;·&nbsp; COMMUNITY PLUGINS &nbsp;·&nbsp; <!-- COUNT -->18<!-- /COUNT --> IN THE CATALOG &nbsp;·&nbsp; <!-- OUTSIDE_COUNT -->8<!-- /OUTSIDE_COUNT --> MORE OUTSIDE IT</sub>
 
   <br /><br />
 
@@ -72,12 +72,16 @@ The plugins in [The collection](#the-collection) are in the [Hermes plugin catal
 
 ## Outside the catalog
 
-<!-- OUTSIDE_COUNT -->6<!-- /OUTSIDE_COUNT --> more public plugins that aren't in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit and haven't been reviewed by Hermes maintainers, so read each README before you install.
+<!-- OUTSIDE_COUNT -->8<!-- /OUTSIDE_COUNT --> more public plugins that aren't in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit and haven't been reviewed by Hermes maintainers, so read each README before you install.
 
 <!-- OUTSIDE:START -->
 <table>
 <tr>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-asgard"><img src="assets/banners/hermes-asgard.webp" alt="Asgard banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-asgard">Asgard</a></strong> &nbsp;<sub>DESKTOP · v0.1.0 · CATALOG REVIEW PENDING</sub><br />Twelve Norse gods for Hermes Desktop, carved in runestone and wood, from Odin to Bragi. Install once, then switch with /skin.<br /><code>hermes plugins install Adolanium/hermes-asgard</code></td>
 <td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-glyphwake"><img src="assets/banners/glyphwake.webp" alt="Glyphwake banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-glyphwake">Glyphwake</a></strong> &nbsp;<sub>DESKTOP · v0.1.0 · NOT IN CATALOG</sub><br />Click the empty chat in Hermes Desktop and watch a wave of ASCII characters decode into a wordmark.<br /><code>hermes plugins install Adolanium/hermes-glyphwake</code></td>
+</tr>
+<tr>
+<td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-kemet"><img src="assets/banners/hermes-kemet.webp" alt="Kemet banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-kemet">Kemet</a></strong> &nbsp;<sub>DESKTOP · v0.1.0 · CATALOG REVIEW PENDING</sub><br />Twelve Egyptian gods for Hermes Desktop, in painted relief and gold leaf, from Thoth to Hathor. Install once, then switch with /skin.<br /><code>hermes plugins install Adolanium/hermes-kemet</code></td>
 <td width="50%" valign="top"><a href="https://github.com/Adolanium/hermes-memory-pane"><img src="assets/banners/hermes-memory-pane.webp" alt="Memory Pane banner" /></a><br /><strong><a href="https://github.com/Adolanium/hermes-memory-pane">Memory Pane</a></strong> &nbsp;<sub>DESKTOP · v0.1.0 · CATALOG REVIEW PENDING</sub><br />See what Hermes remembered in each chat, and edit or undo it from a Hermes Desktop pane.<br /><code>hermes plugins install Adolanium/hermes-memory-pane --enable</code></td>
 </tr>
 <tr>
