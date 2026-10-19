@@ -30,7 +30,9 @@
     "resume-session": "Resume Session",
     "gadget": "Hermes Gadget",
     "hermes-deepseek-web": "Hermes DeepSeek Web",
-    "hermes-pantheon": "Pantheon"
+    "hermes-pantheon": "Pantheon",
+    "hermes-tripo": "Tripo",
+    "hermes-memory-pane": "Memory Pane"
   },
   "summaries": {
     "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
@@ -69,6 +71,14 @@
       "pending": "https://github.com/NousResearch/hermes-agent/pull/141032",
       "summary": "Eighteen Hermes Desktop themes in dithered classical marble: all twelve Olympians plus Hades, Nyx, Helios, Selene and Medusa. Install once, then switch with /skin.",
       "install": "hermes plugins install Adolanium/hermes-pantheon"
+    },
+    "hermes-tripo": {
+      "category": "Tools",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141403"
+    },
+    "hermes-memory-pane": {
+      "category": "Desktop",
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141421"
     }
   }
 }

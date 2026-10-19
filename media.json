@@ -39,5 +39,9 @@
   "hermes-pantheon": {
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-pantheon/c19043955225211d199921c21b4f8440ad0d6b98/media/shots/hera.png",
     "kind": "screenshot"
+  },
+  "hermes-memory-pane": {
+    "source": "https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png",
+    "kind": "screenshot"
   }
 }
