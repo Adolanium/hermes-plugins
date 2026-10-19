@@ -68,12 +68,6 @@
       "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator.",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/140433"
     },
-    "hermes-pantheon": {
-      "category": "Desktop",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141032",
-      "summary": "Eighteen Hermes Desktop themes in dithered classical marble: all twelve Olympians plus Hades, Nyx, Helios, Selene and Medusa. Install once, then switch with /skin.",
-      "install": "hermes plugins install Adolanium/hermes-pantheon"
-    },
     "hermes-tripo": {
       "category": "Tools",
       "pending": "https://github.com/NousResearch/hermes-agent/pull/141403"
