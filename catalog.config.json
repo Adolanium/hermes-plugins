@@ -70,7 +70,8 @@
     },
     "hermes-tripo": {
       "category": "Tools",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141403"
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/141403",
+      "summary": "Make 3D models with Tripo from text, photos or four views, then rig, animate, split into parts, re-UV and convert them for Godot, Unity, Unreal, Roblox, AR or printing. Results open in an interactive 3D viewer inside Hermes Desktop, with a library of past models, and every credit-spending call asks first with its cost."
     },
     "hermes-memory-pane": {
       "category": "Desktop",
