@@ -34,16 +34,16 @@
     "hermes-tripo": "Tripo",
     "hermes-memory-pane": "Memory Pane",
     "hermes-kemet": "Kemet",
-    "hermes-asgard": "Asgard"
+    "hermes-asgard": "Asgard",
+    "hermes-osint-map": "OSINT Map",
+    "hermes-threatmap": "Threat Map",
+    "hermes-lang-he": "Hebrew"
   },
   "summaries": {
-    "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out."
+    "shodan": "Search internet-connected hosts, open ports, DNS and CVEs through Shodan, with a credit ledger that stops before your monthly query credits run out.",
+    "hermes-tripo": "Make 3D models with Tripo from text, photos or four views, then rig, animate, split into parts, re-UV and convert them for Godot, Unity, Unreal, Roblox, AR or printing. Results open in an interactive 3D viewer inside Hermes Desktop, with a library that shows where each model came from, and every credit-spending call asks first with its cost."
   },
   "outside": {
-    "hermes-jina": {
-      "category": "Web",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/140343"
-    },
     "hermes-deepseek-web": {
       "category": "Web"
     },
@@ -61,33 +61,14 @@
       "setup": "https://github.com/Adolanium/Flymes#install",
       "summary": "An experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent's next tool call, with a live Desktop panel to watch it decide."
     },
-    "hermes-gadget-sdk": {
-      "category": "Platforms",
-      "manifest": "plugin/plugin.yaml",
-      "install": "hermes plugins install https://github.com/Adolanium/hermes-gadget-sdk/tree/main/plugin --enable\nhermes gateway setup",
-      "summary": "Give your Hermes a place on your desk: ESP32 boards with a screen, microphone and speaker hold a button, ask, and hear the answer. Includes the gateway plugin, firmware, a browser installer, a Raspberry Pi client and a desktop simulator.",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/140433"
-    },
-    "hermes-tripo": {
-      "category": "Tools",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141403",
-      "summary": "Make 3D models with Tripo from text, photos or four views, then rig, animate, split into parts, re-UV and convert them for Godot, Unity, Unreal, Roblox, AR or printing. Results open in an interactive 3D viewer inside Hermes Desktop, with a library of past models, and every credit-spending call asks first with its cost."
-    },
-    "hermes-memory-pane": {
+    "hermes-osint-map": {
       "category": "Desktop",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141421"
+      "pending": "https://github.com/NousResearch/hermes-agent/pull/143880",
+      "summary": "A live OSINT globe for Hermes Desktop: earthquakes, disasters, aircraft, satellites, news incidents and official traffic cameras from public, keyless sources, with country dossiers, domain recon and briefings Hermes can write for you."
     },
-    "hermes-kemet": {
+    "hermes-threatmap": {
       "category": "Desktop",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141677",
-      "install": "hermes plugins install Adolanium/hermes-kemet",
-      "summary": "Twelve Egyptian gods for Hermes Desktop, in painted relief and gold leaf, from Thoth to Hathor. Install once, then switch with /skin."
-    },
-    "hermes-asgard": {
-      "category": "Desktop",
-      "pending": "https://github.com/NousResearch/hermes-agent/pull/141678",
-      "install": "hermes plugins install Adolanium/hermes-asgard",
-      "summary": "Twelve Norse gods for Hermes Desktop, carved in runestone and wood, from Odin to Bragi. Install once, then switch with /skin."
+      "summary": "A dithered 3D globe of live cyberattacks inside Hermes Desktop, from Check Point's public threat map feed. Unofficial and for personal, non-commercial use; a demo mode runs without the live feed."
     }
   }
 }

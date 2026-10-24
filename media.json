@@ -51,5 +51,13 @@
   "hermes-asgard": {
     "source": "https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png",
     "kind": "screenshot"
+  },
+  "hermes-osint-map": {
+    "source": "https://raw.githubusercontent.com/Adolanium/hermes-osint-map/51343fdbccf63974c2db56244ed34ca3a15c5421/assets/screenshot-overview.webp",
+    "kind": "screenshot"
+  },
+  "hermes-threatmap": {
+    "source": "https://raw.githubusercontent.com/Adolanium/hermes-threatmap/8ca6b210666b0e7a4b2b23bb224a8486d33edc26/assets/screenshot-overview.webp",
+    "kind": "screenshot"
   }
 }

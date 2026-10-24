@@ -4,7 +4,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hermes plugins by Adolanium</title>
 <meta name="theme-color" content="#04003a">
-<meta name="description" content="18 community plugins for Hermes Agent, each reviewed and pinned in the Hermes plugin catalog. Install commands, source and catalog pages.">
+<meta name="description" content="23 community plugins for Hermes Agent, each reviewed and pinned in the Hermes plugin catalog. Install commands, source and catalog pages.">
 <meta property="og:title" content="Hermes plugins by Adolanium"><meta property="og:description" content="Desktop panels, agent tools, web backends and model providers for Hermes Agent, all in the official plugin catalog."><meta property="og:type" content="website"><meta property="og:url" content="https://adolanium.github.io/hermes-plugins/"><meta property="og:image" content="https://adolanium.github.io/hermes-plugins/assets/hero.webp">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2304003a'/%3E%3Crect x='6' y='6' width='52' height='52' fill='none' stroke='%23c9c8ff' stroke-width='3'/%3E%3Cpath d='M22 18v28m20-28v28M22 32h20' stroke='%23ffffff' stroke-width='6'/%3E%3C/svg%3E">
 <style>
@@ -160,14 +160,46 @@ footer a{color:var(--accent)}
   </div>
 </section>
 <section class="facts" aria-label="At a glance">
-  <div><b>18</b><span>plugins in the Hermes catalog, plus 8 outside it</span></div>
+  <div><b>23</b><span>plugins in the Hermes catalog, plus 6 outside it</span></div>
   <div><b>1 command</b><span><code>hermes plugins install &lt;name&gt;</code></span></div>
   <div><b>Pinned</b><span>each install checks out a reviewed commit</span></div>
 </section>
 <section id="plugins" aria-label="Plugins">
-  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>26</span></button><button type="button" data-filter="Desktop" aria-pressed="false">Desktop <span>15</span></button><button type="button" data-filter="Tools" aria-pressed="false">Tools <span>6</span></button><button type="button" data-filter="Web" aria-pressed="false">Web <span>3</span></button><button type="button" data-filter="Models" aria-pressed="false">Models <span>1</span></button><button type="button" data-filter="Platforms" aria-pressed="false">Platforms <span>1</span></button></div></div>
-  <p class="results" id="results" role="status">26 plugins</p>
-  <div class="grid" id="entries"><article class="entry" id="hermes-ledgerline" data-category="Desktop" data-listing="catalog" data-search="ledgerline hermes-ledgerline inspect session costs and usage in hermes desktop. desktop catalog">
+  <div class="tools" id="tools" hidden><div class="search-wrap"><label for="search">Find a plugin</label><input id="search" type="search" placeholder="quota, ssh, search, prices…" autocomplete="off"></div><div class="filters" role="group" aria-label="Filter by category"><button type="button" data-filter="All" aria-pressed="true">All <span>29</span></button><button type="button" data-filter="Desktop" aria-pressed="false">Desktop <span>17</span></button><button type="button" data-filter="Tools" aria-pressed="false">Tools <span>6</span></button><button type="button" data-filter="Web" aria-pressed="false">Web <span>3</span></button><button type="button" data-filter="Models" aria-pressed="false">Models <span>1</span></button><button type="button" data-filter="Platforms" aria-pressed="false">Platforms <span>1</span></button><button type="button" data-filter="General" aria-pressed="false">General <span>1</span></button></div></div>
+  <p class="results" id="results" role="status">29 plugins</p>
+  <div class="grid" id="entries"><article class="entry" id="hermes-asgard" data-category="Desktop" data-listing="catalog" data-search="asgard hermes-asgard twelve norse gods carved in runestone and wood: odin, thor, freyja, loki, frigg, baldur, tyr, heimdall, hel, skadi, freyr and bragi, as hermes desktop themes. install once, then switch with /skin &lt;name&gt;. desktop catalog">
+  <div class="bar"><span class="bar-name">hermes-asgard</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-asgard" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-asgard.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="sha" title="Pinned commit">@ccd74007</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-asgard">Asgard</a></h2>
+    <p class="summary">Twelve Norse gods carved in runestone and wood: Odin, Thor, Freyja, Loki, Frigg, Baldur, Tyr, Heimdall, Hel, Skadi, Freyr and Bragi, as Hermes Desktop themes. Install once, then switch with /skin &lt;name&gt;.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-asgard</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-asgard</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-asgard
+hermes plugins enable hermes-asgard" aria-label="Copy install commands for Asgard">Copy</button></div>
+
+    <details><summary>What it touches</summary><p>theme-only desktop plugin: it registers twelve themes through the plugin SDK, and their stylesheets restyle parts of Desktop&#39;s own UI (sidebar art, tabs, composer, wordmark) only while one of its themes is active. Fonts and art are bundled; no network requests, no agent tools or hooks.</p></details>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-asgard">Catalog page</a><a href="https://github.com/Adolanium/hermes-asgard#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/thor.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/loki.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/heimdall.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/hel.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/freyja.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Asgard">Screenshots (6)</a></p>
+  </div>
+</article>
+<article class="entry" id="hermes-kemet" data-category="Desktop" data-listing="catalog" data-search="kemet hermes-kemet twelve egyptian gods in painted relief and gold leaf: thoth, ra, isis, osiris, anubis, horus, bastet, sekhmet, set, nut, ptah and hathor, as hermes desktop themes. install once, then switch with /skin &lt;name&gt;. desktop catalog">
+  <div class="bar"><span class="bar-name">hermes-kemet</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-kemet" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-kemet.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="sha" title="Pinned commit">@b7d95f54</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-kemet">Kemet</a></h2>
+    <p class="summary">Twelve Egyptian gods in painted relief and gold leaf: Thoth, Ra, Isis, Osiris, Anubis, Horus, Bastet, Sekhmet, Set, Nut, Ptah and Hathor, as Hermes Desktop themes. Install once, then switch with /skin &lt;name&gt;.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-kemet</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-kemet</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-kemet
+hermes plugins enable hermes-kemet" aria-label="Copy install commands for Kemet">Copy</button></div>
+
+    <details><summary>What it touches</summary><p>theme-only desktop plugin: it registers twelve themes through the plugin SDK, and their stylesheets restyle parts of Desktop&#39;s own UI (sidebar art, tabs, composer, wordmark) only while one of its themes is active. Fonts and art are bundled; no network requests, no agent tools or hooks.</p></details>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-kemet">Catalog page</a><a href="https://github.com/Adolanium/hermes-kemet#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/thoth.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/thoth.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/anubis.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/isis.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/horus.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/sekhmet.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false},{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/hathor.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Kemet">Screenshots (6)</a></p>
+  </div>
+</article>
+<article class="entry" id="hermes-ledgerline" data-category="Desktop" data-listing="catalog" data-search="ledgerline hermes-ledgerline inspect session costs and usage in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-ledgerline</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-ledgerline" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-ledgerline.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
   <div class="entry-body">
@@ -183,9 +215,25 @@ hermes plugins enable hermes-ledgerline" aria-label="Copy install commands for L
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-ledgerline">Catalog page</a><a href="https://github.com/Adolanium/hermes-ledgerline#readme">Source</a><a class="view" href="https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa" data-media="[{&quot;src&quot;:&quot;https://github.com/user-attachments/assets/6f0911eb-f684-4e25-82d5-9cc832f855fa&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Ledgerline">Screenshot</a></p>
   </div>
 </article>
+<article class="entry" id="hermes-memory-pane" data-category="Desktop" data-listing="catalog" data-search="memory pane hermes-memory-pane a hermes desktop pane for the built-in memory: see what the focused chat remembered, updated or forgot, and edit, delete or undo any entry without leaving the conversation. works alongside the built-in memory; not a memory provider. desktop catalog">
+  <div class="bar"><span class="bar-name">hermes-memory-pane</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-memory-pane" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-memory-pane.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="sha" title="Pinned commit">@4ba8ae35</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-memory-pane">Memory Pane</a></h2>
+    <p class="summary">A Hermes Desktop pane for the built-in memory: see what the focused chat remembered, updated or forgot, and edit, delete or undo any entry without leaving the conversation. Works alongside the built-in memory; not a memory provider.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-memory-pane</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-memory-pane</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-memory-pane
+hermes plugins enable hermes-memory-pane" aria-label="Copy install commands for Memory Pane">Copy</button></div>
+
+    <details><summary>What it touches</summary><p>a tool_execution middleware reads MEMORY.md and USER.md around each memory call and logs the entry-level changes to $HERMES_HOME/plugin-data/hermes-memory-pane/; the pane rewrites memory entries only when the user edits, deletes, adds or undoes one, through Hermes&#39;s own memory store; no network, credentials, shell commands or background processes.</p></details>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-memory-pane">Catalog page</a><a href="https://github.com/Adolanium/hermes-memory-pane#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Memory Pane">Screenshot</a></p>
+  </div>
+</article>
 <article class="entry" id="hermes-nous-prices" data-category="Desktop" data-listing="catalog" data-search="nous prices hermes-nous-prices browse nous portal model prices and account balances in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-nous-prices</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-nous-prices" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-nous-prices.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
+  <a class="art" href="https://github.com/Adolanium/hermes-nous-prices" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-nous-prices.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
     <p class="entry-meta"><span>Desktop</span><span>v0.1.2</span><span class="sha" title="Pinned commit">@e2e86393</span></p>
     <h2><a href="https://github.com/Adolanium/hermes-nous-prices">Nous Prices</a></h2>
@@ -201,7 +249,7 @@ hermes plugins enable hermes-nous-prices" aria-label="Copy install commands for 
 </article>
 <article class="entry" id="hermes-office" data-category="Desktop" data-listing="catalog" data-search="office hermes-office view and manage bot mode agents in a shared office in hermes desktop. desktop catalog">
   <div class="bar"><span class="bar-name">hermes-office</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-office" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-office.webp" alt="" width="960" height="480" loading="eager" decoding="async"></a>
+  <a class="art" href="https://github.com/Adolanium/hermes-office" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-office.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
     <p class="entry-meta"><span>Desktop</span><span class="sha" title="Pinned commit">@ae956aa7</span></p>
     <h2><a href="https://github.com/Adolanium/hermes-office">Office</a></h2>
@@ -235,7 +283,7 @@ hermes plugins enable hermes-pantheon" aria-label="Copy install commands for Pan
   <div class="bar"><span class="bar-name">hermes-resetwatch</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-resetwatch" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-resetwatch.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
-    <p class="entry-meta"><span>Desktop</span><span>v0.2.23</span><span class="sha" title="Pinned commit">@002c8c37</span></p>
+    <p class="entry-meta"><span>Desktop</span><span>v0.2.24</span><span class="sha" title="Pinned commit">@7bef46c9</span></p>
     <h2><a href="https://github.com/Adolanium/hermes-resetwatch">Resetwatch</a></h2>
     <p class="summary">Track subscription quotas and reset times in Hermes Desktop.</p>
 
@@ -251,7 +299,7 @@ hermes plugins enable hermes-resetwatch" aria-label="Copy install commands for R
   <div class="bar"><span class="bar-name">hermes-rss</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-rss" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-rss.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
-    <p class="entry-meta"><span>Desktop</span><span>v0.0.3</span><span class="sha" title="Pinned commit">@79215b2e</span></p>
+    <p class="entry-meta"><span>Desktop</span><span>v0.0.4</span><span class="sha" title="Pinned commit">@11f8ea42</span></p>
     <h2><a href="https://github.com/Adolanium/hermes-rss">RSS</a></h2>
     <p class="summary">Read RSS and Atom feeds and discuss articles in Hermes Desktop.</p>
 
@@ -343,6 +391,22 @@ hermes plugins enable hermes-toolsmith" aria-label="Copy install commands for To
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-toolsmith">Catalog page</a><a href="https://github.com/Adolanium/hermes-toolsmith#readme">Source</a></p>
   </div>
 </article>
+<article class="entry" id="hermes-lang-he" data-category="General" data-listing="catalog" data-search="hebrew hermes-lang-he hebrew (עברית) language pack for hermes — core cli, gateway and tips (3,396 of 3,486 keys on main), tui (1,331 of 1,356) and desktop (5,153 of 5,245), with desktop flipped right-to-left. hermes bundles no hebrew, so the pack ships all three catalogs; values identical to english and entries whose english wording depends on an argument (on/off, show/hide) are omitted so they fall back to english. general catalog">
+  <div class="bar"><span class="bar-name">hermes-lang-he</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-lang-he" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-lang-he.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>General</span><span>v0.1.0</span><span class="sha" title="Pinned commit">@9e470ec7</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-lang-he">Hebrew</a></h2>
+    <p class="summary">Hebrew (עברית) language pack for Hermes — core CLI, gateway and tips (3,396 of 3,486 keys on main), TUI (1,331 of 1,356) and Desktop (5,153 of 5,245), with Desktop flipped right-to-left. Hermes bundles no Hebrew, so the pack ships all three catalogs; values identical to English and entries whose English wording depends on an argument (on/off, show/hide) are omitted so they fall back to English.</p>
+
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-lang-he</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-lang-he</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-lang-he
+hermes plugins enable hermes-lang-he" aria-label="Copy install commands for Hebrew">Copy</button></div>
+
+    <details><summary>What it touches</summary><p>text-only catalogs plus an __init__.py whose register() is a no-op (kept so Desktop &quot;Install from Git&quot; accepts the pack, #138118); registering the pack never changes display.language, the user opts in via config.</p></details>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-lang-he">Catalog page</a><a href="https://github.com/Adolanium/hermes-lang-he#readme">Source</a></p>
+  </div>
+</article>
 <article class="entry" id="clinepass" data-category="Models" data-listing="catalog" data-search="clinepass clinepass clinepass model provider with live model discovery and a curated fallback catalog. models catalog">
   <div class="bar"><span class="bar-name">clinepass</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-clinepass" tabindex="-1" aria-hidden="true"><img src="assets/banners/clinepass.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
@@ -389,6 +453,22 @@ hermes plugins enable devin" aria-label="Copy install commands for Hermes Devin"
 
     <details><summary>What it touches</summary><p>spawns the vendor devin CLI from PATH or cli_path (devin acp, devin acp --cloud, devin --print, devin auth status, devin models list); the CLI edits files and runs shell commands in a folder the model picks (any folder unless allowed_roots is set) under the configured permission mode (accept-edits/smart auto-allow edits, dangerous auto-allows everything and needs allow_dangerous: true), and talks to Cognition&#39;s servers; Devin Cloud runs use Cognition-managed permissions that Hermes does not gate. Every model-initiated launch goes through Hermes approval; follow-ups typed on a Desktop run card and answers to Devin&#39;s prompts on the card start or allow actions on that click without a Hermes prompt (unanswered card prompts are denied after 300 s by default). Uses the existing Devin CLI login and stores no credentials; Hermes provider, bot and tool secrets are stripped from the child environment (extra_env is passed as set). Background runs continue after the turn up to their timeout and post Devin&#39;s output back into the conversation as a message when they finish. Run history (prompts, diffs, command output) and model preferences are saved under plugin-data/devin unless persist_runs is off. Independent community add-on, not affiliated with Cognition.</p></details>
     <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/devin">Catalog page</a><a href="https://github.com/Adolanium/hermes-devin#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-devin/bcfeeeb8e6a1798595b266a3d2271eebb90aeef2/assets/screenshots/desktop-review.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Hermes Devin">Screenshot</a></p>
+  </div>
+</article>
+<article class="entry" id="hermes-tripo" data-category="Tools" data-listing="catalog" data-search="hermes tripo hermes-tripo make 3d models with tripo from text, photos or four views, then rig, animate, split into parts, re-uv and convert them for godot, unity, unreal, roblox, ar or printing. results open in an interactive 3d viewer inside hermes desktop, with a library that shows where each model came from, and every credit-spending call asks first with its cost. tools catalog">
+  <div class="bar"><span class="bar-name">hermes-tripo</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-tripo" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-tripo.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+  <div class="entry-body">
+    <p class="entry-meta"><span>Tools</span><span>v0.4.0</span><span class="sha" title="Pinned commit">@09b26f6b</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-tripo">Hermes Tripo</a></h2>
+    <p class="summary">Make 3D models with Tripo from text, photos or four views, then rig, animate, split into parts, re-UV and convert them for Godot, Unity, Unreal, Roblox, AR or printing. Results open in an interactive 3D viewer inside Hermes Desktop, with a library that shows where each model came from, and every credit-spending call asks first with its cost.</p>
+    <p class="env">Needs <code>TRIPO_API_KEY</code></p>
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">hermes-tripo</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-tripo</span></code><button type="button" class="copy" data-command="hermes plugins install hermes-tripo
+hermes plugins enable hermes-tripo" aria-label="Copy install commands for Hermes Tripo">Copy</button></div>
+
+    <details><summary>What it touches</summary><p>sends prompts and the local images or 3D model files you or the agent name (up to 50 MB; every local-file upload, free calls included, goes through Hermes&#39;s approval prompt) to Tripo&#39;s API at openapi.tripo3d.ai with TRIPO_API_KEY; saves downloaded models to $HERMES_HOME/tripo/ or a folder the agent picks (never overwriting: a clash gets a &quot; (2)&quot; suffix), and the Desktop viewer&#39;s save button copies models into your Downloads/Tripo folder (or the folder set in its settings); keeps a local task history in $HERMES_HOME/tripo/history.json (chat id, tool, prompt, parent task, estimated cost, saved file paths; at most 2,000 tasks, never sent anywhere); the Desktop library opens local .glb/.fbx/.obj/.stl files only from inside your home folder, $HERMES_HOME/tripo/ or the viewer&#39;s download folder, and uploads nothing; the status-bar chip reads your Tripo balance every two minutes and after each Tripo tool call; no shell commands, background processes or telemetry.</p></details>
+    <p class="entry-links"><a href="https://hermes-agent.nousresearch.com/docs/plugins/hermes-tripo">Catalog page</a><a href="https://github.com/Adolanium/hermes-tripo#readme">Source</a></p>
   </div>
 </article>
 <article class="entry" id="openalex" data-category="Tools" data-listing="catalog" data-search="openalex openalex scholarly search, citation traversal, grouped counts, and fulltext access through openalex with session spending limits. tools catalog">
@@ -457,21 +537,7 @@ hermes plugins enable hermes-jina" aria-label="Copy install commands for Hermes 
 </article></div>
   <div id="outside">
     <div class="outside-head"><h2>Not in the official catalog</h2><p>Public plugins that aren't listed in the Hermes catalog yet: under review, experimental, or not submitted. They install straight from GitHub at the latest commit, and Hermes maintainers haven't reviewed them, so read each README before you install.</p></div>
-    <div class="grid" id="entries-outside"><article class="entry entry-outside" id="hermes-asgard" data-category="Desktop" data-listing="pending" data-search="asgard hermes-asgard twelve norse gods for hermes desktop, carved in runestone and wood, from odin to bragi. install once, then switch with /skin. desktop catalog review pending">
-  <div class="bar"><span class="bar-name">hermes-asgard</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-asgard" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-asgard.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
-  <div class="entry-body">
-    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="listing">Catalog review pending</span></p>
-    <h2><a href="https://github.com/Adolanium/hermes-asgard">Asgard</a></h2>
-    <p class="summary">Twelve Norse gods for Hermes Desktop, carved in runestone and wood, from Odin to Bragi. Install once, then switch with /skin.</p>
-
-    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-asgard</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-asgard" aria-label="Copy install commands for Asgard">Copy</button></div>
-    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
-
-    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/141678">Catalog PR</a><a href="https://adolanium.github.io/hermes-asgard/">Website</a><a href="https://github.com/Adolanium/hermes-asgard#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-asgard/ccd740074fa8178e9ff974f2132aeefb41b2ea05/media/shots/odin.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Asgard">Screenshot</a></p>
-  </div>
-</article>
-<article class="entry entry-outside" id="glyphwake" data-category="Desktop" data-listing="outside" data-search="glyphwake glyphwake click the empty chat in hermes desktop and watch a wave of ascii characters decode into a wordmark. desktop not in catalog">
+    <div class="grid" id="entries-outside"><article class="entry entry-outside" id="glyphwake" data-category="Desktop" data-listing="outside" data-search="glyphwake glyphwake click the empty chat in hermes desktop and watch a wave of ascii characters decode into a wordmark. desktop not in catalog">
   <div class="bar"><span class="bar-name">glyphwake</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-glyphwake" tabindex="-1" aria-hidden="true"><img src="assets/banners/glyphwake.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
@@ -487,32 +553,34 @@ hermes plugins enable glyphwake" aria-label="Copy install commands for Glyphwake
     <p class="entry-links"><a href="https://github.com/Adolanium/hermes-glyphwake#readme">Source</a></p>
   </div>
 </article>
-<article class="entry entry-outside" id="hermes-kemet" data-category="Desktop" data-listing="pending" data-search="kemet hermes-kemet twelve egyptian gods for hermes desktop, in painted relief and gold leaf, from thoth to hathor. install once, then switch with /skin. desktop catalog review pending">
-  <div class="bar"><span class="bar-name">hermes-kemet</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-kemet" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-kemet.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+<article class="entry entry-outside" id="hermes-osint-map" data-category="Desktop" data-listing="pending" data-search="osint map hermes-osint-map a live osint globe for hermes desktop: earthquakes, disasters, aircraft, satellites, news incidents and official traffic cameras from public, keyless sources, with country dossiers, domain recon and briefings hermes can write for you. desktop catalog review pending">
+  <div class="bar"><span class="bar-name">hermes-osint-map</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <a class="art" href="https://github.com/Adolanium/hermes-osint-map" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-osint-map.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
   <div class="entry-body">
-    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="listing">Catalog review pending</span></p>
-    <h2><a href="https://github.com/Adolanium/hermes-kemet">Kemet</a></h2>
-    <p class="summary">Twelve Egyptian gods for Hermes Desktop, in painted relief and gold leaf, from Thoth to Hathor. Install once, then switch with /skin.</p>
+    <p class="entry-meta"><span>Desktop</span><span>v0.2.0</span><span class="listing">Catalog review pending</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-osint-map">OSINT Map</a></h2>
+    <p class="summary">A live OSINT globe for Hermes Desktop: earthquakes, disasters, aircraft, satellites, news incidents and official traffic cameras from public, keyless sources, with country dossiers, domain recon and briefings Hermes can write for you.</p>
 
-    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-kemet</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-kemet" aria-label="Copy install commands for Kemet">Copy</button></div>
+    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-osint-map</span>
+<span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">enable</span> <span class="nb">hermes-osint-map</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-osint-map
+hermes plugins enable hermes-osint-map" aria-label="Copy install commands for OSINT Map">Copy</button></div>
     <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
 
-    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/141677">Catalog PR</a><a href="https://adolanium.github.io/hermes-kemet/">Website</a><a href="https://github.com/Adolanium/hermes-kemet#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/thoth.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-kemet/b7d95f546b7424971bd275fcc0cd132ca9968205/media/shots/thoth.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Kemet">Screenshot</a></p>
+    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/143880">Catalog PR</a><a href="https://github.com/Adolanium/hermes-osint-map#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-osint-map/51343fdbccf63974c2db56244ed34ca3a15c5421/assets/screenshot-overview.webp" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-osint-map/51343fdbccf63974c2db56244ed34ca3a15c5421/assets/screenshot-overview.webp&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="OSINT Map">Screenshot</a></p>
   </div>
 </article>
-<article class="entry entry-outside" id="hermes-memory-pane" data-category="Desktop" data-listing="pending" data-search="memory pane hermes-memory-pane see what hermes remembered in each chat, and edit or undo it from a hermes desktop pane. desktop catalog review pending">
-  <div class="bar"><span class="bar-name">hermes-memory-pane</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-memory-pane" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-memory-pane.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
+<article class="entry entry-outside" id="hermes-threatmap" data-category="Desktop" data-listing="outside" data-search="threat map hermes-threatmap a dithered 3d globe of live cyberattacks inside hermes desktop, from check point&#39;s public threat map feed. unofficial and for personal, non-commercial use; a demo mode runs without the live feed. desktop not in catalog">
+  <div class="bar"><span class="bar-name">hermes-threatmap</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+  <div class="art art-empty" aria-hidden="true"></div>
   <div class="entry-body">
-    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="listing">Catalog review pending</span></p>
-    <h2><a href="https://github.com/Adolanium/hermes-memory-pane">Memory Pane</a></h2>
-    <p class="summary">See what Hermes remembered in each chat, and edit or undo it from a Hermes Desktop pane.</p>
+    <p class="entry-meta"><span>Desktop</span><span>v0.1.0</span><span class="listing">Not in catalog</span></p>
+    <h2><a href="https://github.com/Adolanium/hermes-threatmap">Threat Map</a></h2>
+    <p class="summary">A dithered 3D globe of live cyberattacks inside Hermes Desktop, from Check Point&#39;s public threat map feed. Unofficial and for personal, non-commercial use; a demo mode runs without the live feed.</p>
 
-    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-memory-pane</span> <span class="nb">--enable</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-memory-pane --enable" aria-label="Copy install commands for Memory Pane">Copy</button></div>
-    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
+    <p class="setup">Needs a few setup steps first. <a href="https://github.com/Adolanium/hermes-threatmap#readme">Read the setup guide</a>.</p>
+    <p class="unreviewed">Not reviewed by Hermes maintainers.</p>
 
-    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/141421">Catalog PR</a><a href="https://github.com/Adolanium/hermes-memory-pane#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-memory-pane/4ba8ae3577249d3c9a0f3ad6f8336f43bda3bbf4/assets/memory-pane.png&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Memory Pane">Screenshot</a></p>
+    <p class="entry-links"><a href="https://github.com/Adolanium/hermes-threatmap#readme">Source</a><a class="view" href="https://raw.githubusercontent.com/Adolanium/hermes-threatmap/8ca6b210666b0e7a4b2b23bb224a8486d33edc26/assets/screenshot-overview.webp" data-media="[{&quot;src&quot;:&quot;https://raw.githubusercontent.com/Adolanium/hermes-threatmap/8ca6b210666b0e7a4b2b23bb224a8486d33edc26/assets/screenshot-overview.webp&quot;,&quot;video&quot;:false,&quot;demo&quot;:false}]" data-title="Threat Map">Screenshot</a></p>
   </div>
 </article>
 <article class="entry entry-outside" id="flymes" data-category="Tools" data-listing="outside" data-search="flymes flymes an experiment: a simulated fruit fly connectome, built from real fly brain wiring, picks the agent&#39;s next tool call, with a live desktop panel to watch it decide. tools not in catalog">
@@ -543,20 +611,6 @@ hermes plugins enable glyphwake" aria-label="Copy install commands for Glyphwake
     <p class="entry-links"><a href="https://github.com/Adolanium/hermes-plugin-resume-session#readme">Source</a></p>
   </div>
 </article>
-<article class="entry entry-outside" id="hermes-tripo" data-category="Tools" data-listing="pending" data-search="tripo hermes-tripo make 3d models with tripo from text, photos or four views, then rig, animate, split into parts, re-uv and convert them for godot, unity, unreal, roblox, ar or printing. results open in an interactive 3d viewer inside hermes desktop, with a library of past models, and every credit-spending call asks first with its cost. tools catalog review pending">
-  <div class="bar"><span class="bar-name">hermes-tripo</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
-  <a class="art" href="https://github.com/Adolanium/hermes-tripo" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-tripo.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
-  <div class="entry-body">
-    <p class="entry-meta"><span>Tools</span><span>v0.3.1</span><span class="listing">Catalog review pending</span></p>
-    <h2><a href="https://github.com/Adolanium/hermes-tripo">Tripo</a></h2>
-    <p class="summary">Make 3D models with Tripo from text, photos or four views, then rig, animate, split into parts, re-UV and convert them for Godot, Unity, Unreal, Roblox, AR or printing. Results open in an interactive 3D viewer inside Hermes Desktop, with a library of past models, and every credit-spending call asks first with its cost.</p>
-
-    <div class="command"><code><span class="nb">hermes</span> <span class="nb">plugins</span> <span class="nb">install</span> <span class="nb">Adolanium/<wbr>hermes-tripo</span> <span class="nb">--enable</span></code><button type="button" class="copy" data-command="hermes plugins install Adolanium/hermes-tripo --enable" aria-label="Copy install commands for Tripo">Copy</button></div>
-    <p class="unreviewed">Installs from GitHub at the latest commit. Not reviewed by Hermes maintainers.</p>
-
-    <p class="entry-links"><a href="https://github.com/NousResearch/hermes-agent/pull/141403">Catalog PR</a><a href="https://github.com/Adolanium/hermes-tripo#readme">Website</a><a href="https://github.com/Adolanium/hermes-tripo#readme">Source</a></p>
-  </div>
-</article>
 <article class="entry entry-outside" id="hermes-deepseek-web" data-category="Web" data-listing="outside" data-search="hermes deepseek web hermes-deepseek-web deepseek search &amp; fetch web backend for hermes agent: search the web and read any page as markdown web not in catalog">
   <div class="bar"><span class="bar-name">hermes-deepseek-web</span><span class="bar-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
   <a class="art" href="https://github.com/Adolanium/hermes-deepseek-web" tabindex="-1" aria-hidden="true"><img src="assets/banners/hermes-deepseek-web.webp" alt="" width="960" height="480" loading="lazy" decoding="async"></a>
@@ -583,7 +637,7 @@ hermes plugins enable hermes-deepseek-web" aria-label="Copy install commands for
   <div><span class="step">03</span><h3>Update</h3><p>New versions reach you only after a reviewed pin bump in the catalog. Then <code>hermes plugins update &lt;name&gt;</code> brings them in.</p></div>
 </section>
 </main>
-<footer><p>Independent community plugins for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> by Nous Research; not official Nous Research products. Listed from the Hermes plugin catalog, refreshed daily. Last refreshed 2026-10-20.</p><a href="https://github.com/Adolanium/hermes-plugins/issues">Report a problem</a></footer>
+<footer><p>Independent community plugins for <a href="https://github.com/NousResearch/hermes-agent">Hermes Agent</a> by Nous Research; not official Nous Research products. Listed from the Hermes plugin catalog, refreshed daily. Last refreshed 2026-10-24.</p><a href="https://github.com/Adolanium/hermes-plugins/issues">Report a problem</a></footer>
 </div>
 <div id="status" class="status" role="status" hidden></div>
 <dialog class="viewer" id="viewer" aria-labelledby="viewer-title">

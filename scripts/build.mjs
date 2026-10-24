@@ -21,13 +21,17 @@ async function get(url, json = true) {
 }
 
 // Catalog entries are flat YAML. Read the top-level scalars and the one list we
-// show (screenshots, capabilities.requires_env); folded blocks such as known_issues are skipped.
+// show (screenshots, capabilities.requires_env); a folded (>) block joins its indented lines.
 function parseEntry(text) {
   const entry = {};
   const lines = text.split(/\r?\n/);
   for (let i = 0; i < lines.length; i++) {
     const top = lines[i].match(/^([a-z_]+):\s*(.*)$/);
-    if (top && !/^[>|]/.test(top[2])) {
+    if (top && /^>[-+]?$/.test(top[2])) {
+      const folded = [];
+      while (i + 1 < lines.length && /^(\s+\S|\s*$)/.test(lines[i + 1])) folded.push(lines[++i].trim());
+      entry[top[1]] = folded.join(' ').replace(/\s+/g, ' ').trim();
+    } else if (top && !/^[>|]/.test(top[2])) {
       // A double-quoted scalar may fold over several lines; YAML joins them with a space.
       let value = top[2];
       while (value.startsWith('"') && !closed(value) && i + 1 < lines.length) value += ' ' + lines[++i].trim();
